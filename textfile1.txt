@@ -34,14 +34,15 @@ search, replace, highlighting:
 	:set [no]incsearch  -  this enable the incremental highlight on search (on/off)
 
 	/\c	- search case insensitive pattern of characters
-	\	- used as an escape character to search for a special one (like /\* search for an asterisk) :[n],[m]s/this/that	- search from line 'n' to line 'm' the word 'this' and substitute with 'that'
+	\	- used as an escape character to search for a special one (like /\* search for an asterisk) 
+	:[n],[m]s/this/that	- search from line 'n' to line 'm' the word 'this' and substitute with 'that'
 	:%s/this/that - same, but search the entire document
-	/g	- means globally, every occurrency, at the end of a search and replace command
-		adding 'i' is case insensitive, adding 'I' is case sensitive
-		adding 'c' it will ask for a confirm
-	\<word\> - both in search and replace, it will find 'word' as a single word,
-		case insensitive and skipping 'password' (i.e. %s/\<word\>/warlords/gi will substitute 
-		'word' as a single word with 'warlords' for the entire document, for every occurrency
+		/g	- means globally, every occurrency, at the end of a search and replace command
+			adding 'i' is case insensitive, adding 'I' is case sensitive
+			adding 'c' it will ask for a confirm
+		\<word\> - both in search and replace, it will find 'word' as a single word,
+			case insensitive and skipping 'password' (i.e. %s/\<word\>/warlords/gi will substitute 
+			'word' as a single word with 'warlords' for the entire document, for every occurrency
 --------
 
 --------
@@ -55,6 +56,16 @@ Sort, Join, View, Read
 ---------
 
 
+---------
+Jump list, change list:
+g, - Go forwart to the next (more recent) edit point of the text
+g; - same, going backwards
+:changes - open the whole list of changes made inside the text
+:jumps - open the jumps list. Vim considers jumps: the use of marks, search or replaces, open a different file.
+	Paging or scrolling through the page (like using hjkl) are NOT considered jumps
+^o - move to the previous jump
+^i - move to the next jump
+---------
 	this file has no indentation (yet) file
 	this file has no indentation (yet)
 
