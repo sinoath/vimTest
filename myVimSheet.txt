@@ -1,0 +1,98 @@
+this is a test file https://vim.fandom.com/wiki/Accessing_the_system_clipboard
+
+
+# this is a comment like line
+
+
+
+this file has no indentation (yet)
+
+--------
+	[n]Y - yanks the entire line [n] number of time
+	[n]D - delete [n] number of line, starting at the cursor position
+	[n] yy or dd	- yank or put [n] lines (copy/paste)	
+--------
+
+ [n] number of line, starting at the cursor position
+
+--------
+Words:
+	[n]w move to the start of the next word, 
+	[n]W same, but ignoring special characters like.the.dot [n] times
+	[n]e move to the end of the next word, E ignore the special characters
+	[n]ge same but backwards, gE ignore special characters
+--------
+
+--------
+search, replace, highlighting:
+	/	-	start the search of a characters pattern
+	*	-	search forward every occurency of the word under cursor
+	#	-	same, but backward
+
+	:nohl	-	set temporary off the highlight
+	:set [no]hlsearch	-	set highlight on/off
+	:set [no]incsearch  -  this enable the incremental highlight on search (on/off)
+
+	/\c	- search case insensitive pattern of characters
+	\	- used as an escape character to search for a special one (like /\* search for an asterisk) 
+	:[n],[m]s/this/that	- search from line 'n' to line 'm' the word 'this' and substitute with 'that'
+	:%s/this/that - same, but search the entire document
+		/g	- means globally, every occurrency, at the end of a search and replace command
+			adding 'i' is case insensitive, adding 'I' is case sensitive
+			adding 'c' it will ask for a confirm
+		\<word\> - both in search and replace, it will find 'word' as a single word,
+			case insensitive and skipping 'password' (i.e. %s/\<word\>/warlords/gi will substitute 
+			'word' as a single word with 'warlords' for the entire document, for every occurrency
+--------
+
+--------
+Sort, Join, View, Read
+	:[n][m]sort	- ascending sort from line 'n' to line 'm', or use % to sort the whole file
+	sort! - same, but in descending order
+	J - Capital 'J' join the current line to the line below, a number can precede the command
+		to join more than 1 line at a time
+	:view - Open a file in read only mode
+	:read - read the content of a file and insert it on cursor position
+---------
+
+
+---------
+Paging, how to move inside a text:
+	^f and ^b - move Forward/Back 1 page at a time
+	^u and ^d - move Up/Down half a page at a time
+gg and G - move to the top or the bottom of the text
+---------
+
+
+---------
+Jump list, change list:
+g, - Go forwart to the next (more recent) edit point of the text
+g; - same, going backwards
+:changes - open the whole list of changes made inside the text
+:jumps - open the jumps list. Vim considers jumps: the use of marks, search or replaces, open a different file.
+	Paging or scrolling through the page (like using hjkl) are NOT considered jumps
+^o - move to the previous jump
+^i - move to the next jump
+---------
+
+
+---------
+Marks:
+	m[letter] - set a (book)mark, lowercase for just the file, uppercase globally.
+		meaning that every file can have an 'a' mark, just one file can have 'A' mark
+	'[letter] or `[letter] - move to the line or the line and character when the [letter]
+		mark was set. Changing file if using uppercase letter, if it was set on a different file
+		(set a mark on the 's' of 'Marks' word to try
+	[' and ]' - navigate marks lines, backward/forward
+	[` and ]` - same but for lines and character position
+	:marks - show the list of (book)marks
+	kdelmarks - appending '!' delete all marks, "c-f" delete a range of marks, "a, f, T" delete a specific
+		list of marks
+---------
+
+	this file has no indentation (yet) file
+	this file has no indentation (yet)
+
+just writing other words in here
+for the purpose of learning this editor
+
