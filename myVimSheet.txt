@@ -60,7 +60,8 @@ Sort, Join, View, Read
 Paging, how to move inside a text:
 	^f and ^b - move Forward/Back 1 page at a time
 	^u and ^d - move Up/Down half a page at a time
-gg and G - move to the top or the bottom of the text
+	gg and G - move to the top or the bottom of the text
+	M or H or L - move to the Middle, top (High) or bottom (Low) of the page
 ---------
 
 
