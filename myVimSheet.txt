@@ -86,13 +86,41 @@ Marks:
 	[' and ]' - navigate marks lines, backward/forward
 	[` and ]` - same but for lines and character position
 	:marks - show the list of (book)marks
-	kdelmarks - appending '!' delete all marks, "c-f" delete a range of marks, "a, f, T" delete a specific
-		list of marks
+	:delmarks - appending '!' delete all marks, adding "c-f" delete a range of marks (c through f), 
+		"a, f, T" delete a specific list of marks (marks a, f and T in this case)
 ---------
+
+
+
+---------
+Find in line:
+	f[character] or F[character] - find the next or previous [character] in current line
+	t[character] or T[character] - same but it stops one character the [character], so it search Till [character]
+		both of them can be combined with yank and delete commands
+	d/[pattern] - delete in line all character up until [pattern] (forward), NOT including [pattern]
+	d?[pattern] - same but backward, it will erase all characters INCLUDING [pattern]
+---------
+
+
+---------
+Visual mode:
+	v - enter visual mode; V - enter in visual_line mode
+		now I can select the text using the same commands to move the cursor (hjkl, w, e and so on)
+		or the find in line commands. i can be used as 'in', like 'i(' select all text inside the parenthesis
+	y and p - yank and paste the selected text. IPORTANT: when pasting something the 'visual mode buffer'
+		will be overwritten but the new selected text, useful for switch a pattern, not for pasting more than once
+---------
+
 
 	this file has no indentation (yet) file
 	this file has no indentation (yet)
 
 just writing other words in here
 for the purpose of learning this editor
+
+
+
+
+playlist I'm watching:
+https://www.youtube.com/watch?v=1lzXr-MztOU&list=PLy7Kah3WzqrEjsuvhT46fr28Q11oa5ZoI
 
