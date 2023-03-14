@@ -8,6 +8,7 @@ this is a test file https://vim.fandom.com/wiki/Accessing_the_system_clipboard
 this file has no indentation (yet)
 
 --------
+Copy/paste
 	[n]Y - yanks the entire line [n] number of time
 	[n]D - delete [n] number of line, starting at the cursor position
 	[n] yy or dd	- yank or put [n] lines (copy/paste)	
@@ -110,6 +111,18 @@ Visual mode:
 		or the find in line commands. i can be used as 'in', like 'i(' select all text inside the parenthesis
 	y and p - yank and paste the selected text. IPORTANT: when pasting something the 'visual mode buffer'
 		will be overwritten but the new selected text, useful for switch a pattern, not for pasting more than once
+---------
+
+
+
+
+---------
+.vimrc file
+	nmap - map a key to execute a command in normal mode
+	imap - same, but in insert mode
+	let mapleader = '[key]' - set a key as <leader>, so that pressing that key and a shortcut execute a command
+		(as an example setting ',' as leader, some action can be assigned to ',i' avoiding to enter in INSERT mode)
+	abbr [pattern-a][pattern-b] - writing pattern-a and a space, it will write pattern-b
 ---------
 
 
