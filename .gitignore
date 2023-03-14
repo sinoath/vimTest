@@ -1,0 +1,3 @@
+# ignoring cpp local files
+*.cpp
+
