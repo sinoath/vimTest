@@ -63,18 +63,22 @@ Paging, how to move inside a text:
 	^u and ^d - move Up/Down half a page at a time
 	gg and G - move to the top or the bottom of the text
 	M or H or L - move to the Middle, top (High) or bottom (Low) of the page
+	zz, zt, zb - move the current line to the middle (z), to the top (t) or to the bottom (b)
+	ctrl-e or ctrl-y - scroll the page down or up one line leaving the cursor in place (if the current cursor
+		line remain visible, otherwise the cursor will follow the scrolling)
+		a number [n] before this command set how many line scroll up or down
 ---------
 
 
 ---------
 Jump list, change list:
-g, - Go forwart to the next (more recent) edit point of the text
-g; - same, going backwards
-:changes - open the whole list of changes made inside the text
-:jumps - open the jumps list. Vim considers jumps: the use of marks, search or replaces, open a different file.
-	Paging or scrolling through the page (like using hjkl) are NOT considered jumps
-^o - move to the previous jump
-^i - move to the next jump
+	g, - Go forwart to the next (more recent) edit point of the text
+	g; - same, going backwards
+	:changes - open the whole list of changes made inside the text
+	:jumps - open the jumps list. Vim considers jumps: the use of marks, search or replaces, open a different file.
+		Paging or scrolling through the page (like using hjkl) are NOT considered jumps
+	^o - move to the previous jump
+	^i - move to the next jump
 ---------
 
 
@@ -106,10 +110,10 @@ Find in line:
 
 ---------
 Visual mode:
-	v - enter visual mode; V - enter in visual_line mode
+	v - enter visual mode; V - enter in visual_line mode; ctrl-v enter in the visual_block mode
 		now I can select the text using the same commands to move the cursor (hjkl, w, e and so on)
 		or the find in line commands. i can be used as 'in', like 'i(' select all text inside the parenthesis
-	y and p - yank and paste the selected text. IPORTANT: when pasting something the 'visual mode buffer'
+	y and p - yank and paste the selected text. IPORTANT: when pasting something, the 'visual mode buffer'
 		will be overwritten but the new selected text, useful for switch a pattern, not for pasting more than once
 ---------
 
@@ -124,6 +128,37 @@ Visual mode:
 		(as an example setting ',' as leader, some action can be assigned to ',i' avoiding to enter in INSERT mode)
 	abbr [pattern-a][pattern-b] - writing pattern-a and a space, it will write pattern-b
 ---------
+
+
+---------
+Tab
+<< or >> - outdent or indent a line. Can be combined with [n]j or [n]k to indent/outdent current line and the [n]
+	lines below/above. Visual select could also be used to select lines and outdent/indent. All apply in NORMAL mode
+	In INSERT mode TAB key is used to indent/outdent (TIP - :set list show invisible characters like tab or CR;
+	in this mode pressing ctrl-v and typing u0009, will insert a 'TAB character' (visible as ^I when using :set list)
+	Alternatively pressing ctrl-v ctrl-i do the same thing
+
+	Invisible characters can be customized, unicode symbol for TAB is u2192 and unicode symbol for eol is u21b2
+	in .vimrc file using set listchars=tab: and typing ctrl-v followed by the unicode u2192 we can set TAB invisible
+	character. appending to the same line '\ ,eol:' and typing ctrl-v and than 'u21b2' I can change eol character too
+set expandtab - Convert a TAB in a number of spaces characters, apply to << and >> too
+set noexpandtab - revert to the TAB character
+set sw or set swiftwidth - show how many spaces the TAB character will be converted to, appen '=[n]' to set this number to n
+set ts or set tabstop - show how many 'spaces wide' are TAB characters, append '=[n]' to set as "n spaces wide"
+set sts of set softtabstop - set the TAB stop in INSERT mode, if set to 0 it will follow the tabstop setting.
+	As the previous commands, append '=[n]' to set as 'n number of spaces wide'
+	- Behaviour: if 'set tabstop=4' 'set softtabstop=0' 'set expandtab' are used
+	in INSERT mode a TAB will insert 4 spaces, and will treat as 4 characters, hence got to press BACKSPACE 4 times to delete
+	- Behaviour: if 'set tabstop=4' 'set softtabstop=4' 'set expandtab' are used
+	in INSERT mode TAB write spaces like before, but BACKSPACE cancel all the spaces at once BUT ONLY IF no more spaces are added
+	this way BACKSPACE needs to be used 5 times (with the settings above) to delete the TAB
+set ts sts sw - show all three settings at once; in general they are set to the same number of spaces
+filetype indent on - in .vimrc set custom indentation based on different file types.
+autocmd Filetype cpp setlocal noexpandtab ts=4 sts=4 sw=4 - in .vimrc set custom values everytime a cpp file is loaded in vim
+
+	
+---------
+
 
 
 	this file has no indentation (yet) file
