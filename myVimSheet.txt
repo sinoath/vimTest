@@ -1,30 +1,41 @@
-this is a test file https://vim.fandom.com/wiki/Accessing_the_system_clipboard
+-----------------------------------------------
+Paging, how to move inside a text:
+-----------------------------------------------
+	^f and ^b - move Forward/Back 1 page at a time
+	^u and ^d - move Up/Down half a page at a time
+	gg and G - move to the top or the bottom of the text
+	M or H or L - move to the Middle, top (High) or bottom (Low) of the page
+	zz, zt, zb - move the current line to the middle (z), to the top (t) or to the bottom (b)
+	ctrl-e or ctrl-y - scroll the page down or up one line leaving the cursor in place (if the current cursor
+		line remain visible, otherwise the cursor will follow the scrolling)
+		a number [n] before this command set how many line scroll up or down
+---------
 
-
-# this is a comment like line
-
-
-
-this file has no indentation (yet)
-
---------
+-----------------------------------------------
+Copy/paste (yank/put)
+-----------------------------------------------
 	[n]Y - yanks the entire line [n] number of time
 	[n]D - delete [n] number of line, starting at the cursor position
-	[n] yy or dd	- yank or put [n] lines (copy/paste)	
---------
+	[n]yy or dd	- yank or put [n] lines (copy/paste)	
+	:set relativenumber - show the line relative numbering
+	:set number - show the absolute line numbering (both can be used at the same time)
+---------
 
- [n] number of line, starting at the cursor position
 
---------
-Words:
+-----------------------------------------------
+Words and i (inner):
+-----------------------------------------------
 	[n]w move to the start of the next word, 
 	[n]W same, but ignoring special characters like.the.dot [n] times
 	[n]e move to the end of the next word, E ignore the special characters
 	[n]ge same but backwards, gE ignore special characters
---------
+	D or C - delete or change from the cursor position to the end of the line
+	i - select inside a text object (word, parenthesis, quotes and so on)
+---------
 
---------
-search, replace, highlighting:
+-----------------------------------------------
+search,highlighting:
+-----------------------------------------------
 	/	-	start the search of a characters pattern
 	*	-	search forward every occurency of the word under cursor
 	#	-	same, but backward
@@ -35,6 +46,11 @@ search, replace, highlighting:
 
 	/\c	- search case insensitive pattern of characters
 	\	- used as an escape character to search for a special one (like /\* search for an asterisk) 
+---------
+
+-----------------------------------------------
+replace
+-----------------------------------------------
 	:[n],[m]s/this/that	- search from line 'n' to line 'm' the word 'this' and substitute with 'that'
 	:%s/this/that - same, but search the entire document
 		/g	- means globally, every occurrency, at the end of a search and replace command
@@ -43,10 +59,13 @@ search, replace, highlighting:
 		\<word\> - both in search and replace, it will find 'word' as a single word,
 			case insensitive and skipping 'password' (i.e. %s/\<word\>/warlords/gi will substitute 
 			'word' as a single word with 'warlords' for the entire document, for every occurrency
---------
+---------
 
---------
-Sort, Join, View, Read
+-----------------------------------------------
+Info line, Sort, Join, View, Read
+-----------------------------------------------
+	ctrl-g - show the infoline, with the filename, number of lines and the position of the cursor
+		as a percentage of the file
 	:[n][m]sort	- ascending sort from line 'n' to line 'm', or use % to sort the whole file
 	sort! - same, but in descending order
 	J - Capital 'J' join the current line to the line below, a number can precede the command
@@ -55,29 +74,21 @@ Sort, Join, View, Read
 	:read - read the content of a file and insert it on cursor position
 ---------
 
-
----------
-Paging, how to move inside a text:
-	^f and ^b - move Forward/Back 1 page at a time
-	^u and ^d - move Up/Down half a page at a time
-gg and G - move to the top or the bottom of the text
----------
-
-
----------
+-----------------------------------------------
 Jump list, change list:
-g, - Go forwart to the next (more recent) edit point of the text
-g; - same, going backwards
-:changes - open the whole list of changes made inside the text
-:jumps - open the jumps list. Vim considers jumps: the use of marks, search or replaces, open a different file.
-	Paging or scrolling through the page (like using hjkl) are NOT considered jumps
-^o - move to the previous jump
-^i - move to the next jump
+-----------------------------------------------
+	g, - Go forwart to the next (more recent) edit point of the text
+	g; - same, going backwards
+	:changes - open the whole list of changes made inside the text
+	:jumps - open the jumps list. Vim considers jumps: the use of marks, search or replaces, open a different file.
+		Paging or scrolling through the page (like using hjkl) are NOT considered jumps
+	^o - move to the previous jump
+	^i - move to the next jump
 ---------
 
-
----------
+-----------------------------------------------
 Marks:
+-----------------------------------------------
 	m[letter] - set a (book)mark, lowercase for just the file, uppercase globally.
 		meaning that every file can have an 'a' mark, just one file can have 'A' mark
 	'[letter] or `[letter] - move to the line or the line and character when the [letter]
@@ -87,13 +98,12 @@ Marks:
 	[` and ]` - same but for lines and character position
 	:marks - show the list of (book)marks
 	:delmarks - appending '!' delete all marks, adding "c-f" delete a range of marks (c through f), 
-		"a, f, T" delete a specific list of marks (marks a, f and T in this case)
+		"a f T" delete a specific list of marks (marks a, f and T in this case)
 ---------
 
-
-
----------
+-----------------------------------------------
 Find in line:
+-----------------------------------------------
 	f[character] or F[character] - find the next or previous [character] in current line
 	t[character] or T[character] - same but it stops one character the [character], so it search Till [character]
 		both of them can be combined with yank and delete commands
@@ -102,14 +112,110 @@ Find in line:
 ---------
 
 
----------
+-----------------------------------------------
 Visual mode:
-	v - enter visual mode; V - enter in visual_line mode
+-----------------------------------------------
+	v - enter visual mode; V - enter in visual_line mode; ctrl-v enter in the visual_block mode
 		now I can select the text using the same commands to move the cursor (hjkl, w, e and so on)
 		or the find in line commands. i can be used as 'in', like 'i(' select all text inside the parenthesis
-	y and p - yank and paste the selected text. IPORTANT: when pasting something the 'visual mode buffer'
+	y and p - yank and paste the selected text. IPORTANT: when pasting something, the 'visual mode buffer'
 		will be overwritten but the new selected text, useful for switch a pattern, not for pasting more than once
 ---------
+
+
+
+
+-----------------------------------------------
+.vimrc file
+-----------------------------------------------
+	nmap - map a key to execute a command in normal mode
+	imap - same, but in insert mode
+	let mapleader = '[key]' - set a key as <leader>, so that pressing that key and a shortcut execute a command
+		(as an example setting ',' as leader, some action can be assigned to ',i' avoiding to enter in INSERT mode)
+	abbr [pattern-a][pattern-b] - writing pattern-a and a space, it will write pattern-b
+---------
+
+
+-----------------------------------------------
+Tab
+-----------------------------------------------
+<< or >> - outdent or indent a line. Can be combined with [n]j or [n]k to indent/outdent current line and the [n]
+	lines below/above. Visual select could also be used to select lines and outdent/indent. All apply in NORMAL mode
+	In INSERT mode TAB key is used to indent/outdent (TIP - :set list show invisible characters like tab or CR)
+	in this mode pressing ctrl-v and typing u0009, will insert a 'TAB character' (visible as ^I when using :set list)
+	Alternatively pressing ctrl-v ctrl-i do the same thing
+
+	Invisible characters can be customized, unicode symbol for TAB is u2192 and unicode symbol for eol is u21b2
+	in .vimrc file using set listchars=tab: and typing ctrl-v followed by the unicode u2192 we can set TAB invisible
+	character. appending to the same line '\ ,eol:' and typing ctrl-v and than 'u21b2' I can change eol character too
+
+	set expandtab - Convert a TAB in a number of spaces characters, apply to << and >> too
+	set noexpandtab - revert to the TAB character
+	set sw or set swiftwidth - show how many spaces the TAB character will be converted to, appen '=[n]' to set this number to n
+	set ts or set tabstop - show how many 'spaces wide' are TAB characters, append '=[n]' to set as "n spaces wide"
+	set sts of set softtabstop - set the TAB stop in INSERT mode, if set to 0 it will follow the tabstop setting.
+
+	As the previous commands, append '=[n]' to set as 'n number of spaces wide'
+	- Behaviour: if 'set tabstop=4' 'set softtabstop=0' 'set expandtab' are used
+	in INSERT mode a TAB will insert 4 spaces, and will treat as 4 characters, hence got to press BACKSPACE 4 times to delete
+	- Behaviour: if 'set tabstop=4' 'set softtabstop=4' 'set expandtab' are used
+	in INSERT mode TAB write spaces like before, but BACKSPACE cancel all the spaces at once BUT ONLY IF no more spaces are added
+	this way BACKSPACE needs to be used 5 times (with the settings above) to delete the TAB
+
+	set ts sts sw - show all three settings at once; in general they are set to the same number of spaces
+
+	filetype indent on - in .vimrc set custom indentation based on different file types.
+	autocmd Filetype cpp setlocal noexpandtab ts=4 sts=4 sw=4 - in .vimrc set custom values everytime a cpp file is loaded in vim
+	---------
+
+
+-----------------------------------------------
+Buffers
+-----------------------------------------------
+	:buffers or :ls - show the list of buffers. '#' mean the previous one, '%a' means active buffer
+		a '+' means there are unsaved changes in that buffer
+	:edit or :e filename - open in edit mode filename, putting the previous file in a buffer
+	:e! - put the file in the last saved state, in other words in the state the file was last time wass issued :w
+	:bp or bn - go to the previous/next buffer (inside the buffers list)
+	:set hidden - avoid to show warning message when switching buffer without saving changes in the current one
+		this apply to all files in the buffer, not just the current one
+	:bd - delete a buffer. If a change was made on that file, it'll show a warning message, 
+		even if :set hidden was set
+---------
+
+
+
+-----------------------------------------------
+Split windows
+-----------------------------------------------
+:sp or vsp - split window horizontally or vertically, even for the same file. So I can work on different places
+	of the text/code inside the file
+	appending 'filename', it will split open filename instead of a copy of the file itself
+:set splitright - invert the default behavior, showing the vertical split window to the right instead of left
+:resize - accept numbers for an absolute resizing, or +/-[n] for relative resizing
+:vertical resize - same but vertically
+:ba or :ball - shows all buffers in split windows
+:vert ba - same but vertically
+:[vert] 3ba -  shows the first 3 buffers
+:vsp | b2 - open the buffer 2 in a vertical split window (mandatory use of '|' character, otherwise it'll open
+	buffer 2 as a new window)
+:ba or :ball - shows all buffers in split windows
+:vert ba - same but vertically
+:[vert] 3ba -  shows the first 3 buffers
+:vsp | b2 - open the buffer 2 in a vertical split window (mandatory use of '|' character, otherwise it'll open
+	buffer 2 as a new window)
+ctrl-w - escape command for windows. (remapped to Alt-a, tmux style) After that:
+	- 'w' switch window cycling through them
+	- 'hjkl' move to the window vim-style, so 'h' left, 'j'down and so on
+	- 'x' swap windows
+	- 'r' or 'R' rotate the split windows in one direction or the opposite
+	- 't' or 'b' move to the (t)op left window or the (b)ottom right window
+	- 'p' move to the previous window
+	- 's' split window
+	- '=' make the windows eaqually sized
+	- '-' or '|' maximizes height/width of the current window
+	- 'o' shows (o)nly the current window, putting into buffers the other ones
+:help ctrl-w - open a comprehensive help page for split windows commands
 
 
 	this file has no indentation (yet) file
