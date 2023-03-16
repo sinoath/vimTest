@@ -79,11 +79,12 @@ Jump list, change list:
 -----------------------------------------------
 	g, - Go forwart to the next (more recent) edit point of the text
 	g; - same, going backwards
+	gi - place the cursor at the last insert position and enter INSERT mode
+	^o - move to the previous jump
+	^i - move to the next jump
 	:changes - open the whole list of changes made inside the text
 	:jumps - open the jumps list. Vim considers jumps: the use of marks, search or replaces, open a different file.
 		Paging or scrolling through the page (like using hjkl) are NOT considered jumps
-	^o - move to the previous jump
-	^i - move to the next jump
 ---------
 
 -----------------------------------------------
@@ -216,6 +217,31 @@ ctrl-w - escape command for windows. (remapped to Alt-a, tmux style) After that:
 	- '-' or '|' maximizes height/width of the current window
 	- 'o' shows (o)nly the current window, putting into buffers the other ones
 :help ctrl-w - open a comprehensive help page for split windows commands
+---------
+
+
+-----------------------------------------------
+Tabs windows
+-----------------------------------------------
+:tabedit or tabe [filename] - open a new tab same way as split commands, with the file itself or "filename"
+:tabn [n] or :tabp [n] - got to the [n] next/previous tab
+	[n]gt or [n]gT do the same
+:tabnew - open an empty new tab. The time is unnamed untile a file is saved.
+	The tab have the same name of the split window I'm in
+:tabm [n] - move the tab to the [n] position, 0 meaning the far left. If no [n] are typed, move the tab to the far right
+:tabclose or :q - close a single tab and put it in a buffer
+:tabclose n - closes the n tab, far left is 1
+:tab ball - opens all the buffers in separate tabs, limited to tabepagemax value
+:tab sb [n] - open a new tab with the [n] buffer in it (see Buffer section sb or splitbuffer)
+:set tabpagemax [n] - set the max number of tabs, or shows the setting if no [n] is typed
+:tabonly - close all tabs but the one I'm currently in
+:drop [filename] - substitute with a 'filename' tab the current one. If the file is already open in a tab, will move to that tab
+- split windows can be used inside a tab, see Split section
+:tab split - open the current split window in a new tab, leaving the split in place
+ctrl-w T - same as tab split, but closes the split window too
+:qa - closes all tabs
+
+
 
 
 	this file has no indentation (yet) file
@@ -229,4 +255,3 @@ for the purpose of learning this editor
 
 playlist I'm watching:
 https://www.youtube.com/watch?v=1lzXr-MztOU&list=PLy7Kah3WzqrEjsuvhT46fr28Q11oa5ZoI
-
