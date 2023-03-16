@@ -240,6 +240,7 @@ Tabs windows
 :tab split - open the current split window in a new tab, leaving the split in place
 ctrl-w T - same as tab split, but closes the split window too
 :qa - closes all tabs
+---------
 
 
 
