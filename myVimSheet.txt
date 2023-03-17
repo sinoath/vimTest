@@ -51,6 +51,7 @@ search,highlighting:
 -----------------------------------------------
 replace
 -----------------------------------------------
+
 	:[n],[m]s/this/that	- search from line 'n' to line 'm' the word 'this' and substitute with 'that'
 	:%s/this/that - same, but search the entire document
 		/g	- means globally, every occurrency, at the end of a search and replace command
@@ -140,15 +141,15 @@ Visual mode:
 -----------------------------------------------
 Tab
 -----------------------------------------------
-<< or >> - outdent or indent a line. Can be combined with [n]j or [n]k to indent/outdent current line and the [n]
-	lines below/above. Visual select could also be used to select lines and outdent/indent. All apply in NORMAL mode
-	In INSERT mode TAB key is used to indent/outdent (TIP - :set list show invisible characters like tab or CR)
-	in this mode pressing ctrl-v and typing u0009, will insert a 'TAB character' (visible as ^I when using :set list)
-	Alternatively pressing ctrl-v ctrl-i do the same thing
+	<< or >> - outdent or indent a line. Can be combined with [n]j or [n]k to indent/outdent current line and the [n]
+		lines below/above. Visual select could also be used to select lines and outdent/indent. All apply in NORMAL mode
+		In INSERT mode TAB key is used to indent/outdent (TIP - :set list show invisible characters like tab or CR)
+		in this mode pressing ctrl-v and typing u0009, will insert a 'TAB character' (visible as ^I when using :set list)
+		Alternatively pressing ctrl-v ctrl-i do the same thing
 
-	Invisible characters can be customized, unicode symbol for TAB is u2192 and unicode symbol for eol is u21b2
-	in .vimrc file using set listchars=tab: and typing ctrl-v followed by the unicode u2192 we can set TAB invisible
-	character. appending to the same line '\ ,eol:' and typing ctrl-v and than 'u21b2' I can change eol character too
+		Invisible characters can be customized, unicode symbol for TAB is u2192 and unicode symbol for eol is u21b2
+		in .vimrc file using set listchars=tab: and typing ctrl-v followed by the unicode u2192 we can set TAB invisible
+		character. appending to the same line '\ ,eol:' and typing ctrl-v and than 'u21b2' I can change eol character too
 
 	set expandtab - Convert a TAB in a number of spaces characters, apply to << and >> too
 	set noexpandtab - revert to the TAB character
@@ -189,59 +190,97 @@ Buffers
 -----------------------------------------------
 Split windows
 -----------------------------------------------
-:sp or vsp - split window horizontally or vertically, even for the same file. So I can work on different places
-	of the text/code inside the file
-	appending 'filename', it will split open filename instead of a copy of the file itself
-:set splitright - invert the default behavior, showing the vertical split window to the right instead of left
-:resize - accept numbers for an absolute resizing, or +/-[n] for relative resizing
-:vertical resize - same but vertically
-:ba or :ball - shows all buffers in split windows
-:vert ba - same but vertically
-:[vert] 3ba -  shows the first 3 buffers
-:vsp | b2 - open the buffer 2 in a vertical split window (mandatory use of '|' character, otherwise it'll open
-	buffer 2 as a new window)
-:ba or :ball - shows all buffers in split windows
-:vert ba - same but vertically
-:[vert] 3ba -  shows the first 3 buffers
-:vsp | b2 - open the buffer 2 in a vertical split window (mandatory use of '|' character, otherwise it'll open
-	buffer 2 as a new window)
-ctrl-w - escape command for windows. (remapped to Alt-a, tmux style) After that:
-	- 'w' switch window cycling through them
-	- 'hjkl' move to the window vim-style, so 'h' left, 'j'down and so on
-	- 'x' swap windows
-	- 'r' or 'R' rotate the split windows in one direction or the opposite
-	- 't' or 'b' move to the (t)op left window or the (b)ottom right window
-	- 'p' move to the previous window
-	- 's' split window
-	- '=' make the windows eaqually sized
-	- '-' or '|' maximizes height/width of the current window
-	- 'o' shows (o)nly the current window, putting into buffers the other ones
-:help ctrl-w - open a comprehensive help page for split windows commands
+	:sp or vsp - split window horizontally or vertically, even for the same file. So I can work on different places
+		of the text/code inside the file
+		appending 'filename', it will split open filename instead of a copy of the file itself
+	:set splitright - invert the default behavior, showing the vertical split window to the right instead of left
+	:resize - accept numbers for an absolute resizing, or +/-[n] for relative resizing
+	:vertical resize - same but vertically
+	:ba or :ball - shows all buffers in split windows
+	:vert ba - same but vertically
+	:[vert] 3ba -  shows the first 3 buffers
+	:vsp | b2 - open the buffer 2 in a vertical split window (mandatory use of '|' character, otherwise it'll open
+		buffer 2 as a new window)
+	:ba or :ball - shows all buffers in split windows
+	:vert ba - same but vertically
+	:[vert] 3ba -  shows the first 3 buffers
+	:vsp | b2 - open the buffer 2 in a vertical split window (mandatory use of '|' character, otherwise it'll open
+		buffer 2 as a new window)
+	ctrl-w - escape command for windows. (remapped to Alt-a, tmux style) After that:
+		- 'w' switch window cycling through them
+		- 'hjkl' move to the window vim-style, so 'h' left, 'j'down and so on
+		- 'x' swap windows
+		- 'r' or 'R' rotate the split windows in one direction or the opposite
+		- 't' or 'b' move to the (t)op left window or the (b)ottom right window
+		- 'p' move to the previous window
+		- 's' split window
+		- '=' make the windows eaqually sized
+		- '-' or '|' maximizes height/width of the current window
+		- 'o' shows (o)nly the current window, putting into buffers the other ones
+	:help ctrl-w - open a comprehensive help page for split windows commands
 ---------
 
 
 -----------------------------------------------
 Tabs windows
 -----------------------------------------------
-:tabedit or tabe [filename] - open a new tab same way as split commands, with the file itself or "filename"
-:tabn [n] or :tabp [n] - got to the [n] next/previous tab
-	[n]gt or [n]gT do the same
-:tabnew - open an empty new tab. The time is unnamed untile a file is saved.
-	The tab have the same name of the split window I'm in
-:tabm [n] - move the tab to the [n] position, 0 meaning the far left. If no [n] are typed, move the tab to the far right
-:tabclose or :q - close a single tab and put it in a buffer
-:tabclose n - closes the n tab, far left is 1
-:tab ball - opens all the buffers in separate tabs, limited to tabepagemax value
-:tab sb [n] - open a new tab with the [n] buffer in it (see Buffer section sb or splitbuffer)
-:set tabpagemax [n] - set the max number of tabs, or shows the setting if no [n] is typed
-:tabonly - close all tabs but the one I'm currently in
-:drop [filename] - substitute with a 'filename' tab the current one. If the file is already open in a tab, will move to that tab
-- split windows can be used inside a tab, see Split section
-:tab split - open the current split window in a new tab, leaving the split in place
-ctrl-w T - same as tab split, but closes the split window too
-:qa - closes all tabs
+	:tabedit or tabe [filename] - open a new tab same way as split commands, with the file itself or "filename"
+	:tabn [n] or :tabp [n] - got to the [n] next/previous tab
+		[n]gt or [n]gT do the same
+	:tabnew - open an empty new tab. The time is unnamed untile a file is saved.
+		The tab have the same name of the split window I'm in
+	:tabm [n] - move the tab to the [n] position, 0 meaning the far left. If no [n] are typed, move the tab to the far right
+	:tabclose or :q - close a single tab and put it in a buffer
+	:tabclose n - closes the n tab, far left is 1
+	:tab ball - opens all the buffers in separate tabs, limited to tabepagemax value
+	:tab sb [n] - open a new tab with the [n] buffer in it (see Buffer section sb or splitbuffer)
+	:set tabpagemax [n] - set the max number of tabs, or shows the setting if no [n] is typed
+	:tabonly - close all tabs but the one I'm currently in
+	:drop [filename] - substitute with a 'filename' tab the current one. If the file is already open in a tab, will move to that tab
+	- split windows can be used inside a tab, see Split section
+	:tab split - open the current split window in a new tab, leaving the split in place
+	ctrl-w T - same as tab split, but closes the split window too
+	:qa - closes all tabs
 ---------
 
+
+-----------------------------------------------
+Folding text
+-----------------------------------------------
+	TIP: Easier to practice with a code file (python, css, cpp or else)
+		folds are lost on file close, unless a mkview file is created (and loaded after the file is open)
+		can add a section in .vimrc to auto make a view and silently auto load a view (see .vimrc file)
+	:mkview - create a make view file (mkview)
+	:loadview - load a previously saved view
+	:set foldmethod or :set fdm - show (or set) the fold method in use. The default one is 'manual'
+
+	:[n],[m]fold or [n],[m]fo - create a fold from line 'n' to line 'm'
+	:,+[n]fo - create a fold for the current line and the next 'n' lines
+	:,-[n]fo - same but the previous [n] lines
+	zf - after a visual selection, it will create a fold. ('z' remind of a folding paper, many commands use it)
+	zo and zc - open/close a fold
+	zf[motion] - create a folder based on that motion exemples are:
+		- zf2j create a fold for current line and 2 lines under
+		- zfip create a fold for the paragraph the cursor is in
+		- zfa{ create a fold for a code block inside curly braces
+		- va{ and zf has the same effect, first command visual select text inside curly braces, and zf create the fold
+	zn - open all folders, but if a folder was manually closed it stay closed
+	zN - close all folders, but if a folder was manually opened it stays opened
+	:[n][m] foldopen - open folds from line 'n' to line 'm'.
+	:[n][m] foldclose - close folds from line 'n' to line 'm'.
+	:% foldopen - select the entire document and open all folds. Same apply to foldclose
+	zj and zk - move to the next/previous folder. IMPORTANT: zk move the cursor to the last line of the previous folder!
+	[z and ]z - move to cursor to the top/bottom line of the current folder
+	zd - delete the current folder
+	zE - delete all the folders in the document
+
+Folds can be nested:
+zO and zC - open/close the current fold and all inner/outer nested ones
+zA - toggles between zC and zO
+zr and zm - close/open all folds by one level
+zR and zR - act like zC and zO but for all folds
+
+	another for test
 
 
 
