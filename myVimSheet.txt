@@ -260,6 +260,14 @@ Folds can be nested:
 	zA - toggles between zC and zO
 	zr and zm - close/open all folds by one level
 	zR and zR - act like zC and zO but for all folds
+---------
+
+
+-----------------------------------------------
+netrw
+-----------------------------------------------
+starting topic
+---------
 
 	another for test
 
