@@ -21,7 +21,6 @@ Copy/paste (yank/put)
 	:set number - show the absolute line numbering (both can be used at the same time)
 ---------
 
-
 -----------------------------------------------
 Words and i (inner):
 -----------------------------------------------
@@ -51,7 +50,6 @@ search,highlighting:
 -----------------------------------------------
 replace
 -----------------------------------------------
-
 	:[n],[m]s/this/that	- search from line 'n' to line 'm' the word 'this' and substitute with 'that'
 	:%s/this/that - same, but search the entire document
 		/g	- means globally, every occurrency, at the end of a search and replace command
@@ -113,7 +111,6 @@ Find in line:
 	d?[pattern] - same but backward, it will erase all characters INCLUDING [pattern]
 ---------
 
-
 -----------------------------------------------
 Visual mode:
 -----------------------------------------------
@@ -123,9 +120,6 @@ Visual mode:
 	y and p - yank and paste the selected text. IPORTANT: when pasting something, the 'visual mode buffer'
 		will be overwritten but the new selected text, useful for switch a pattern, not for pasting more than once
 ---------
-
-
-
 
 -----------------------------------------------
 .vimrc file
@@ -137,39 +131,32 @@ Visual mode:
 	abbr [pattern-a][pattern-b] - writing pattern-a and a space, it will write pattern-b
 ---------
 
-
 -----------------------------------------------
 Tab
 -----------------------------------------------
 	<< or >> - outdent or indent a line. Can be combined with [n]j or [n]k to indent/outdent current line and the [n]
 		lines below/above. Visual select could also be used to select lines and outdent/indent. All apply in NORMAL mode
-		In INSERT mode TAB key is used to indent/outdent (TIP - :set list show invisible characters like tab or CR)
+			In INSERT mode TAB key is used to indent/outdent (TIP - :set list show invisible characters like tab or CR)
 		in this mode pressing ctrl-v and typing u0009, will insert a 'TAB character' (visible as ^I when using :set list)
 		Alternatively pressing ctrl-v ctrl-i do the same thing
-
-		Invisible characters can be customized, unicode symbol for TAB is u2192 and unicode symbol for eol is u21b2
+			Invisible characters can be customized, unicode symbol for TAB is u2192 and unicode symbol for eol is u21b2
 		in .vimrc file using set listchars=tab: and typing ctrl-v followed by the unicode u2192 we can set TAB invisible
 		character. appending to the same line '\ ,eol:' and typing ctrl-v and than 'u21b2' I can change eol character too
-
-	set expandtab - Convert a TAB in a number of spaces characters, apply to << and >> too
-	set noexpandtab - revert to the TAB character
-	set sw or set swiftwidth - show how many spaces the TAB character will be converted to, appen '=[n]' to set this number to n
-	set ts or set tabstop - show how many 'spaces wide' are TAB characters, append '=[n]' to set as "n spaces wide"
-	set sts of set softtabstop - set the TAB stop in INSERT mode, if set to 0 it will follow the tabstop setting.
-
+	:set expandtab - Convert a TAB in a number of spaces characters, apply to << and >> too
+	:set noexpandtab - revert to the TAB character
+	:set sw or set swiftwidth - show how many spaces the TAB character will be converted to, appen '=[n]' to set this number to n
+	:set ts or set tabstop - show how many 'spaces wide' are TAB characters, append '=[n]' to set as "n spaces wide"
+	:set sts of set softtabstop - set the TAB stop in INSERT mode, if set to 0 it will follow the tabstop setting.
 	As the previous commands, append '=[n]' to set as 'n number of spaces wide'
-	- Behaviour: if 'set tabstop=4' 'set softtabstop=0' 'set expandtab' are used
+		- Behaviour: if 'set tabstop=4' 'set softtabstop=0' 'set expandtab' are used
 	in INSERT mode a TAB will insert 4 spaces, and will treat as 4 characters, hence got to press BACKSPACE 4 times to delete
-	- Behaviour: if 'set tabstop=4' 'set softtabstop=4' 'set expandtab' are used
+		- Behaviour: if 'set tabstop=4' 'set softtabstop=4' 'set expandtab' are used
 	in INSERT mode TAB write spaces like before, but BACKSPACE cancel all the spaces at once BUT ONLY IF no more spaces are added
 	this way BACKSPACE needs to be used 5 times (with the settings above) to delete the TAB
-
-	set ts sts sw - show all three settings at once; in general they are set to the same number of spaces
-
+	:set ts sts sw - show all three settings at once; in general they are set to the same number of spaces
 	filetype indent on - in .vimrc set custom indentation based on different file types.
 	autocmd Filetype cpp setlocal noexpandtab ts=4 sts=4 sw=4 - in .vimrc set custom values everytime a cpp file is loaded in vim
-	---------
-
+---------
 
 -----------------------------------------------
 Buffers
@@ -184,8 +171,6 @@ Buffers
 	:bd - delete a buffer. If a change was made on that file, it'll show a warning message, 
 		even if :set hidden was set
 ---------
-
-
 
 -----------------------------------------------
 Split windows
@@ -220,7 +205,6 @@ Split windows
 	:help ctrl-w - open a comprehensive help page for split windows commands
 ---------
 
-
 -----------------------------------------------
 Tabs windows
 -----------------------------------------------
@@ -243,7 +227,6 @@ Tabs windows
 	:qa - closes all tabs
 ---------
 
-
 -----------------------------------------------
 Folding text
 -----------------------------------------------
@@ -253,7 +236,6 @@ Folding text
 	:mkview - create a make view file (mkview)
 	:loadview - load a previously saved view
 	:set foldmethod or :set fdm - show (or set) the fold method in use. The default one is 'manual'
-
 	:[n],[m]fold or [n],[m]fo - create a fold from line 'n' to line 'm'
 	:,+[n]fo - create a fold for the current line and the next 'n' lines
 	:,-[n]fo - same but the previous [n] lines
@@ -273,12 +255,11 @@ Folding text
 	[z and ]z - move to cursor to the top/bottom line of the current folder
 	zd - delete the current folder
 	zE - delete all the folders in the document
-
 Folds can be nested:
-zO and zC - open/close the current fold and all inner/outer nested ones
-zA - toggles between zC and zO
-zr and zm - close/open all folds by one level
-zR and zR - act like zC and zO but for all folds
+	zO and zC - open/close the current fold and all inner/outer nested ones
+	zA - toggles between zC and zO
+	zr and zm - close/open all folds by one level
+	zR and zR - act like zC and zO but for all folds
 
 	another for test
 
