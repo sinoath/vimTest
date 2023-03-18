@@ -9,6 +9,7 @@ Paging, how to move inside a text:
 	ctrl-e or ctrl-y - scroll the page down or up one line leaving the cursor in place (if the current cursor
 		line remain visible, otherwise the cursor will follow the scrolling)
 		a number [n] before this command set how many line scroll up or down
+	^ and g_ - move to the first/last non blank character of the line
 ---------
 
 -----------------------------------------------
@@ -275,6 +276,8 @@ starting topic
 
 	this file has no indentation (yet) file
 	this file has no indentation (yet)
+	this paragraph lines have a bunch of spaces at the end of the line
+
 
 just writing other words in here
 for the purpose of learning this editor
