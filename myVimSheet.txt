@@ -266,7 +266,23 @@ Folds can be nested:
 -----------------------------------------------
 netrw
 -----------------------------------------------
-starting topic
+	vim [nameDir] - Open vim netrw plugin for the directory 'nameDir'
+	moving the cursor up with the vim motions (hjkl) the top part of netrw shows hints, commands,
+	shortcuts, quick help and so on
+	to change a setting in this section press ENTER (for example to change the sort filter)
+	when navigating inside directories, we can select a file with ENTER to open it, but using ':q' will close
+	vim completelly.
+	with the cursor on a file we can split open it
+	o - horizontally, v - vertically, or p - preview it
+	preview is a horizontal (by default) split open window, but leave the cursor on netrw, while 'o' and 'v' do not
+	:let g:netrw preview=1 - change the split preview from horizontal to vertical
+	the vertical split will open to the left, unless specifing to open on the right side with the command
+	:let g:netrw altv=1
+	:Vex or :Sex - when a file is opened in vim, these commands split open vertically or horizontally a netrw window
+	in netrw:
+		gh - show/hide the dot files
+		I - show/hide the top banner
+		s - change file sorting filter
 ---------
 
 	another for test
