@@ -35,8 +35,8 @@ a number [n] before this command set how many line scroll up or down<br>
 `[n]Y` - yanks the entire line [n] number of time<br>
 `[n]D` - delete [n] number of line, starting at the cursor position<br>
 `[n]yy` or `[n]dd`	- yank or put [n] lines (copy/paste)<br>
-`:set relativenumber` - show the line relative numbering
-`:set number` - show the absolute line numbering (both can be used at the same time)<br>
+`:set relativenumber` - show the line relative numbering<br>
+`:set number` - show the absolute line numbering (both can be used at the same time)<br><br>
 [back to index](#custom-vim-sheet)
 
 ### Words and i (for inner)
@@ -65,11 +65,11 @@ a number [n] before this command set how many line scroll up or down<br>
 `:[n],[m]s/this/that` - search from line 'n' to line 'm' the word 'this' and substitute with 'that'<br>
 `:%s/this/that` - same, but search the entire document<br>
 `/g` - means globally, every occurrency, at the end of a search and replace command<br>
-adding `i` is case insensitive, adding `I` is case sensitive
-adding `c` it will ask for a confirm
-`\<word\>` - both in search and replace, it will find 'word' as a single word,
-case insensitive and skipping **password** (i.e. `%s/\<word\>/warlords/gi` will substitute 
-**word** as a single word with **warlords** for the entire document, for every occurrency
+adding `i` is case insensitive, adding `I` is case sensitive<br>
+adding `c` it will ask for a confirm<br>
+`\<word\>` - both in search and replace, it will find 'word' as a single word,<br>
+case insensitive and skipping **password** (i.e. `%s/\<word\>/warlords/gi` will substitute <br>
+**word** as a single word with **warlords** for the entire document, for every occurrency<br>
 [back to index](#custom-vim-sheet)
 
 ### Info line, Sort, Join, View, Read
@@ -163,6 +163,7 @@ this way BACKSPACE needs to be used 5 times (with the settings above) to delete 
 `:set ts sts sw` - show all three settings at once; in general they are set to the same number of spaces<br>
 `filetype indent on` - in .vimrc set custom indentation based on different file types.<br>
 `autocmd Filetype cpp setlocal noexpandtab ts=4 sts=4 sw=4` - in .vimrc set custom values everytime a cpp file is loaded in vim<br>
+
 [back to index](#custom-vim-sheet)
 
 ### Buffers
