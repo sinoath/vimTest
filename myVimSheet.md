@@ -176,6 +176,7 @@ a `+` means there are unsaved changes in that buffer<br>
 this apply to all files in the buffer, not just the current one<br>
 `:bd` - delete a buffer. If a change was made on that file, it'll show a warning message, <br>
 even if `:set hidden` was set<br>
+[back to index](#custom-vim-sheet)
 
 ### Split windows
 
@@ -206,6 +207,7 @@ buffer 2 as a new window)<br>
 - `=` make the windows eaqually sized<br>
 - `-` or '|' maximizes height/width of the current window<br>
 - `o` shows (o)nly the current window, putting into buffers the other ones<br>
+
 `:help ctrl-w` - open a comprehensive help page for split windows commands<br>
 [back to index](#custom-vim-sheet)<br>
 
