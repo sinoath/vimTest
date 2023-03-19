@@ -167,47 +167,47 @@ this way BACKSPACE needs to be used 5 times (with the settings above) to delete 
 
 ### Buffers
 
-`:buffers` or `:ls` - show the list of buffers. `#` mean the previous one, `%a` means active buffer
-a `+` means there are unsaved changes in that buffer
-`:edit` or `:e filename` - open in edit mode filename, putting the previous file in a buffer
-`:e!` - put the file in the last saved state, in other words in the state the file was last time wass issued :w
-`:bp` or `bn` - go to the previous/next buffer (inside the buffers list)
-`:set hidden` - avoid to show warning message when switching buffer without saving changes in the current one
-this apply to all files in the buffer, not just the current one
-`:bd` - delete a buffer. If a change was made on that file, it'll show a warning message, 
-even if `:set hidden` was set
+`:buffers` or `:ls` - show the list of buffers. `#` mean the previous one, `%a` means active buffer<br>
+a `+` means there are unsaved changes in that buffer<br>
+`:edit` or `:e filename` - open in edit mode filename, putting the previous file in a buffer<br>
+`:e!` - put the file in the last saved state, in other words in the state the file was last time wass issued :w<br>
+`:bp` or `bn` - go to the previous/next buffer (inside the buffers list)<br>
+`:set hidden` - avoid to show warning message when switching buffer without saving changes in the current one<br>
+this apply to all files in the buffer, not just the current one<br>
+`:bd` - delete a buffer. If a change was made on that file, it'll show a warning message, <br>
+even if `:set hidden` was set<br>
 
 ### Split windows
 
-`:sp` or `:vsp` - split window horizontally or vertically, even for the same file. So I can work on different places
-of the text/code inside the file
-appending 'filename', it will split open filename instead of a copy of the file itself
-`:set splitright` - invert the default behavior, showing the vertical split window to the right instead of left
-`:resize` - accept numbers for an absolute resizing, or +/-[n] for relative resizing
-`:vertical resize` - same but vertically
-`:ba` or :ball - shows all buffers in split windows
-`:vert ba` - same but vertically
-`:[vert] 3ba` -  shows the first 3 buffers
-`:vsp | b2` - open the buffer 2 in a vertical split window (mandatory use of '|' character, otherwise it'll open
-buffer 2 as a new window)
-`:ba` or `:ball `- shows all buffers in split windows
-`:vert ba` - same but vertically
-`:[vert] 3ba` -  shows the first 3 buffers
-`:vsp | b2` - open the buffer 2 in a vertical split window (mandatory use of '|' character, otherwise it'll open
-buffer 2 as a new window)
-`ctrl-w` - escape command for windows. (remapped to Alt-a, tmux style) After that:
-- `w` switch window cycling through them
-- `hjkl` move to the window vim-style, so 'h' left, 'j'down and so on
-- `x` swap windows
-- `r` or 'R' rotate the split windows in one direction or the opposite
-- `t` or 'b' move to the (t)op left window or the (b)ottom right window
-- `p` move to the previous window
-- `s` split window
-- `=` make the windows eaqually sized
-- `-` or '|' maximizes height/width of the current window
-- `o` shows (o)nly the current window, putting into buffers the other ones
-`:help ctrl-w` - open a comprehensive help page for split windows commands
-[back to index](#custom-vim-sheet)
+`:sp` or `:vsp` - split window horizontally or vertically, even for the same file. So I can work on different places<br>
+of the text/code inside the file<br>
+appending 'filename', it will split open filename instead of a copy of the file itself<br>
+`:set splitright` - invert the default behavior, showing the vertical split window to the right instead of left<br>
+`:resize` - accept numbers for an absolute resizing, or +/-[n] for relative resizing<br>
+`:vertical resize` - same but vertically<br>
+`:ba` or :ball - shows all buffers in split windows<br>
+`:vert ba` - same but vertically<br>
+`:[vert] 3ba` -  shows the first 3 buffers<br>
+`:vsp | b2` - open the buffer 2 in a vertical split window (mandatory use of '|' character, otherwise it'll open<br>
+buffer 2 as a new window)<br>
+`:ba` or `:ball `- shows all buffers in split windows<br>
+`:vert ba` - same but vertically<br>
+`:[vert] 3ba` -  shows the first 3 buffers<br>
+`:vsp | b2` - open the buffer 2 in a vertical split window (mandatory use of '|' character, otherwise it'll open<br>
+buffer 2 as a new window)<br>
+`ctrl-w` - escape command for windows. (remapped to Alt-a, tmux style) After that:<br>
+- `w` switch window cycling through them<br>
+- `hjkl` move to the window vim-style, so 'h' left, 'j'down and so on<br>
+- `x` swap windows<br>
+- `r` or 'R' rotate the split windows in one direction or the opposite<br>
+- `t` or 'b' move to the (t)op left window or the (b)ottom right window<br>
+- `p` move to the previous window<br>
+- `s` split window<br>
+- `=` make the windows eaqually sized<br>
+- `-` or '|' maximizes height/width of the current window<br>
+- `o` shows (o)nly the current window, putting into buffers the other ones<br>
+`:help ctrl-w` - open a comprehensive help page for split windows commands<br>
+[back to index](#custom-vim-sheet)<br>
 
 ### Tabs windows
 
@@ -228,6 +228,7 @@ The tab have the same name of the split window I'm in<br>
 `:tab split` - open the current split window in a new tab, leaving the split in place<br>
 `ctrl-w T` - same as tab split, but closes the split window too<br>
 `:qa` - closes all tabs<br>
+
 [back to index](#custom-vim-sheet)
 
 ### Folding text
