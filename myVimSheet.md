@@ -2,7 +2,7 @@
 
 Topics:
 - [Paging, how to move inside a text](#paging-how-to-move-inside-a-text)
-- [Copy/paste (yank/put)](#copy-paste-(yank-put\))
+- [Copy/paste (yank/put)](#copypaste-yankput)
 - [Words and i for inner](#words-and-i-for-inner)
 - [search and highlighting](#search-and-highlighting)
 - [replace](#replace)
@@ -18,7 +18,7 @@ Topics:
 - [Tabs windows](#Tabs-windows)
 - [Folding text](#Folding-text)
 
-#### Paging, how to move inside a text
+### Paging, how to move inside a text
 
 `ctrl-f` and `ctrl-b` - move Forward/Back 1 page at a time<br>
 `ctrl-u` and `ctrl-d` - move Up/Down half a page at a time<br>
@@ -30,7 +30,7 @@ Topics:
 a number [n] before this command set how many line scroll up or down<br>
 [back to index](#custom-vim-sheet)
 
-#### Copy-paste (yank-put)
+### Copy-paste (yank-put)
 
 `[n]Y` - yanks the entire line [n] number of time<br>
 `[n]D` - delete [n] number of line, starting at the cursor position<br>
@@ -39,7 +39,7 @@ a number [n] before this command set how many line scroll up or down<br>
 `:set number` - show the absolute line numbering (both can be used at the same time)<br>
 [back to index](#custom-vim-sheet)
 
-#### Words and i for inner
+### Words and i (for inner)
 
 `[n]w` move to the start of the next word, <br>
 `[n]W` same, but ignoring special characters like.the.dot [n] times<br>
@@ -49,7 +49,7 @@ a number [n] before this command set how many line scroll up or down<br>
 `i` - select inside a text object (word, parenthesis, quotes and so on)<br>
 [back to index](#custom-vim-sheet)
 
-#### search and highlighting
+### search and highlighting
 
 `/`	- start the search of a characters pattern<br>
 `*`	- search forward every occurency of the word under cursor<br>
@@ -61,43 +61,39 @@ a number [n] before this command set how many line scroll up or down<br>
 `\`	- used as an escape character to search for a special one (like `/\*` search for an asterisk) <br>
 [back to index](#custom-vim-sheet)
 
-replace
------------------------------------------------
-	:[n],[m]s/this/that	- search from line 'n' to line 'm' the word 'this' and substitute with 'that'
-	:%s/this/that - same, but search the entire document
-		/g	- means globally, every occurrency, at the end of a search and replace command
-			adding 'i' is case insensitive, adding 'I' is case sensitive
-			adding 'c' it will ask for a confirm
-		\<word\> - both in search and replace, it will find 'word' as a single word,
-			case insensitive and skipping 'password' (i.e. %s/\<word\>/warlords/gi will substitute 
-			'word' as a single word with 'warlords' for the entire document, for every occurrency
----------
+### replace
+`:[n],[m]s/this/that` - search from line 'n' to line 'm' the word 'this' and substitute with 'that'<br>
+`:%s/this/that` - same, but search the entire document<br>
+`/g` - means globally, every occurrency, at the end of a search and replace command<br>
+adding `i` is case insensitive, adding `I` is case sensitive
+adding `c` it will ask for a confirm
+`\<word\>` - both in search and replace, it will find 'word' as a single word,
+case insensitive and skipping **password** (i.e. `%s/\<word\>/warlords/gi` will substitute 
+**word** as a single word with **warlords** for the entire document, for every occurrency
+[back to index](#custom-vim-sheet)
 
------------------------------------------------
-Info line, Sort, Join, View, Read
------------------------------------------------
-	ctrl-g - show the infoline, with the filename, number of lines and the position of the cursor
-		as a percentage of the file
-	:[n][m]sort	- ascending sort from line 'n' to line 'm', or use % to sort the whole file
-	sort! - same, but in descending order
-	J - Capital 'J' join the current line to the line below, a number can precede the command
-		to join more than 1 line at a time
-	:view - Open a file in read only mode
-	:read - read the content of a file and insert it on cursor position
----------
+### Info line, Sort, Join, View, Read
 
------------------------------------------------
-Jump list, change list:
------------------------------------------------
-	g, - Go forwart to the next (more recent) edit point of the text
-	g; - same, going backwards
-	gi - place the cursor at the last insert position and enter INSERT mode
-	^o - move to the previous jump
-	^i - move to the next jump
-	:changes - open the whole list of changes made inside the text
-	:jumps - open the jumps list. Vim considers jumps: the use of marks, search or replaces, open a different file.
-		Paging or scrolling through the page (like using hjkl) are NOT considered jumps
----------
+`ctrl-g` - show the infoline, with the filename, number of lines and the position of the cursor<br>
+as a percentage of the file<br>
+`:[n][m]sort` - ascending sort from line **n** to line **m** or use `%` to sort the whole file<br>
+`sort!` - same, but in descending order<br>
+`J` - Capital **J** join the current line to the line below, a number can precede the command<br>
+to join more than 1 line at a time<br>
+`:view` - Open a file in read only mode<br>
+`:read` - read the content of a file and insert it on cursor position<br>
+[back to index](#custom-vim-sheet)
+
+### Jump list, change list:
+
+`g,` - Go forwart to the next (more recent) edit point of the text<br>
+`g;` - same, going backwards<br>
+`gi` - place the cursor at the last insert position and enter INSERT mode<br>
+`^o` - move to the previous jump<br>
+`^i` - move to the next jump<br>
+`:changes` - open the whole list of changes made inside the text<br>
+`:jumps` - open the jumps list. Vim considers jumps: the use of marks, search or replaces, open a different file.<br>
+Paging or scrolling through the page (like using hjkl) are NOT considered jumps<br>
 
 -----------------------------------------------
 Marks:
