@@ -11,7 +11,7 @@ Topics:
 - [Marks](#marks)
 - [Find in line](#find-in-line)
 - [Visual mode](#visual-mode)
-- [.vimrc file](#.vimrc-file)
+- [.vimrc file](#vimrc-file)
 - [Tab](#tab)
 - [Buffers](#buffers)
 - [Split windows](#split-windows)
@@ -252,6 +252,7 @@ can add a section in .vimrc to auto make a view and silently auto load a view (s
 - `zfip` create a fold for the paragraph the cursor is in<br>
 - `zfa{` create a fold for a code block inside curly braces<br>
 - `va{` and `zf` has the same effect, first command visual select text inside curly braces, and `zf` create the fold<br>
+
 `zn` - open all folders, but if a folder was manually closed it stay closed<br>
 `zN` - close all folders, but if a folder was manually opened it stays opened<br>
 `:[n][m] foldopen` - open folds from line 'n' to line 'm'.<br>
@@ -266,6 +267,7 @@ Folds can be nested:<br>
 `zA` - toggles between zC and zO<br>
 `zr` and `zm` - close/open all folds by one level<br>
 `zR` and `zR` - act like `zC` and `zO` but for all folds<br>
+[back to index](#custom-vim-sheet)
 
 	another for test
 
