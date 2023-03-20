@@ -274,37 +274,38 @@ Folds can be nested:<br>
 
 ### netrw
 
-vim [nameDir] - Open vim netrw plugin for the directory 'nameDir'
-in netrw:
-- `gh` - show/hide the dot files
-- `I` - show/hide the top banner
-- `s` - change file sorting filter
+vim [nameDir] - Open vim netrw plugin for the directory 'nameDir'<br>
+in netrw:<br>
+- `gh` - show/hide the dot files<br>
+- `I` - show/hide the top banner<br>
+- `s` - change file sorting filter<br>
 
-moving the cursor up with the vim motions (`hjkl`) the top part of netrw shows hints, commands,
-shortcuts, quick help and so on
-to change a setting in this section press `ENTER` (for example to change the sort filter)
-when navigating inside directories, we can select a file with `ENTER` to open it, but using `:q` will close
-vim completelly.
-with the cursor on a file we can split open it
-- `o` - horizontally
-- `v` - vertically
-- `p` - preview it
-preview is (by default) a horizontal split open window, but leave the cursor on netrw, while 'o' and 'v' do not
-`:let g:netrw preview=1` - change the split preview from horizontal to vertical
-the vertical split will open to the left, unless specifing to open on the right side with the command `:let g:netrw altv=1`
-`:Vex` or `:Sex` - when a file is opened in vim, these commands split open vertically or horizontally a netrw window
-These next three lines are for the fuzzy search in .vimrc:
-`set nocompatible` - Limit search to your project
-`set path+=\*\*` - Search all subdirectories and recursively
-`set wildmenu` - Shows multiple matches on one line
-`:vimgrep /regex/[option] target` - Search for the regular expression in the target file/directory,
-with the g option it will count the occurencies
-`:copen` of `:cope` or `:cw` - open the list of the regex occurencies
-`:cnext` and `:cprev` - move to the next/previous regex occurency
-`:cfirst` and `:clast` - move to the first/last occurency
-How to search in the entire project directory (it is set when vim opens):
-`:pwd` - show the actual directory
-`:vimgrep /regex/g **/*` - this target means to search in the entire project directory (fuzzy search fix NEEDED)
+moving the cursor up with the vim motions (`hjkl`) the top part of netrw shows hints, commands,<br>
+shortcuts, quick help and so on<br>
+to change a setting in this section press `ENTER` (for example to change the sort filter)<br>
+when navigating inside directories, we can select a file with `ENTER` to open it, but using `:q` will close<br>
+vim completelly.<br>
+with the cursor on a file we can split open it<br>
+- `o` - horizontally<br>
+- `v` - vertically<br>
+- `p` - preview it<br>
+
+preview is (by default) a horizontal split open window, but leave the cursor on netrw, while 'o' and 'v' do not<br>
+`:let g:netrw preview=1` - change the split preview from horizontal to vertical<br>
+the vertical split will open to the left, unless specifing to open on the right side with the command `:let g:netrw altv=1`<br>
+`:Vex` or `:Sex` - when a file is opened in vim, these commands split open vertically or horizontally a netrw window<br>
+These next three lines are for the fuzzy search in .vimrc:<br>
+`set nocompatible` - Limit search to your project<br>
+`set path+=\*\*` - Search all subdirectories and recursively<br>
+`set wildmenu` - Shows multiple matches on one line<br>
+`:vimgrep /regex/[option] target` - Search for the regular expression in the target file/directory,<br>
+with the g option it will count the occurencies<br>
+`:copen` of `:cope` or `:cw` - open the list of the regex occurencies<br>
+`:cnext` and `:cprev` - move to the next/previous regex occurency<br>
+`:cfirst` and `:clast` - move to the first/last occurency<br>
+How to search in the entire project directory (it is set when vim opens):<br>
+`:pwd` - show the actual directory<br>
+`:vimgrep /regex/g **/*` - this target means to search in the entire project directory (fuzzy search fix NEEDED)<br>
 [back to index](#custom-vim-sheet)
 
 
