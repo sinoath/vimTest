@@ -1,6 +1,11 @@
 ## Custom VIM Sheet
 
-Topics:
+<table border="0">
+<tr>
+<td>Topics:</td>
+</tr>
+<tr>
+<td>
 - [Paging, how to move inside a text](#paging-how-to-move-inside-a-text)
 - [Copy/paste (yank/put)](#copypaste-yankput)
 - [Words and i for inner](#words-and-i-for-inner)
@@ -12,13 +17,29 @@ Topics:
 - [Find in line](#find-in-line)
 - [Visual mode](#visual-mode)
 - [.vimrc file](#vimrc-file)
+</td>
+<td>
 - [Tab](#tab)
 - [Buffers](#buffers)
 - [Split windows](#split-windows)
 - [Tabs windows](#tabs-windows)
 - [Folding text](#folding-text)
 - [netrw](#netrw)
+- [vimgrep](#vimgrep)
 - [Registers](#registers)
+</td>
+</tr>
+</table>
+
+
+
+
+
+
+
+
+
+
 
 ### Paging, how to move inside a text
 
@@ -290,7 +311,8 @@ with the cursor on a file we can split open it<br>
 - `v` - vertically<br>
 - `p` - preview it<br>
 
-preview is (by default) a horizontal split open window, but leave the cursor on netrw, while 'o' and 'v' do not<br>
+preview is (by default) a horizontal split open window, but leave the cursor on netrw,<br>
+while 'o' and 'v' split open the window **and** move the cursor to it<br>
 `:let g:netrw preview=1` - change the split preview from horizontal to vertical<br>
 the vertical split will open to the left, unless specifing to open on the right side with the command `:let g:netrw altv=1`<br>
 `:Vex` or `:Sex` - when a file is opened in vim, these commands split open vertically or horizontally a netrw window<br>
@@ -298,6 +320,13 @@ These next three lines are for the fuzzy search in .vimrc:<br>
 `set nocompatible` - Limit search to your project<br>
 `set path+=\*\*` - Search all subdirectories and recursively<br>
 `set wildmenu` - Shows multiple matches on one line<br>
+[back to index](#custom-vim-sheet)
+
+
+
+
+### vimgrep
+
 `:vimgrep /regex/[option] target` - Search for the regular expression in the target file/directory,<br>
 with the g option it will count the occurencies<br>
 `:copen` of `:cope` or `:cw` - open the list of the regex occurencies<br>
