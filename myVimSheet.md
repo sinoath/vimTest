@@ -272,7 +272,7 @@ Folds can be nested:<br>
 [back to index](#custom-vim-sheet)
 
 
-###netrw
+### netrw
 
 vim [nameDir] - Open vim netrw plugin for the directory 'nameDir'
 in netrw:
@@ -310,7 +310,7 @@ How to search in the entire project directory (it is set when vim opens):
 
 
 
-###Registers
+### Registers
 
 Registers are memory locations vim uses to store yanked and deleted text, or macros<br>
 `"[letter]` - is used to call [letter] register, in NORMAL and VISUAL mode<br>
