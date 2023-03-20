@@ -1,35 +1,24 @@
 ## Custom VIM Sheet
 
-<table border="0">
-<tr>
-<td>Topics:</td>
-</tr>
-<tr>
-<td>
-- [Paging, how to move inside a text](#paging-how-to-move-inside-a-text)
-- [Copy/paste (yank/put)](#copypaste-yankput)
-- [Words and i for inner](#words-and-i-for-inner)
-- [search and highlighting](#search-and-highlighting)
-- [replace](#replace)
-- [Info line, Sort, Join, View, Read](#info-line-sort-join-view-read)
-- [Jump list, change list](#jump-list-change-list)
-- [Marks](#marks)
-- [Find in line](#find-in-line)
-- [Visual mode](#visual-mode)
-- [.vimrc file](#vimrc-file)
-</td>
-<td>
-- [Tab](#tab)
-- [Buffers](#buffers)
+| Topics: |  |
+| :-- | :-- |
+| - [Paging, how to move inside a text](#paging-how-to-move-inside-a-text) | - [Tab](#tab)
+| - [Copy/paste (yank/put)](#copypaste-yankput) | - [Buffers](#buffers)
+| - [Words and i for inner](#words-and-i-for-inner)
+| - [search and highlighting](#search-and-highlighting)
+| - [replace](#replace)
+| - [Info line, Sort, Join, View, Read](#info-line-sort-join-view-read)
+| - [Jump list, change list](#jump-list-change-list)
+| - [Marks](#marks)
+| - [Find in line](#find-in-line)
+| - [Visual mode](#visual-mode)
+| - [.vimrc file](#vimrc-file)
 - [Split windows](#split-windows)
 - [Tabs windows](#tabs-windows)
 - [Folding text](#folding-text)
 - [netrw](#netrw)
 - [vimgrep](#vimgrep)
 - [Registers](#registers)
-</td>
-</tr>
-</table>
 
 
 
