@@ -287,9 +287,9 @@ netrw
 	:let g:netrw altv=1
 	:Vex or :Sex - when a file is opened in vim, these commands split open vertically or horizontally a netrw window
 These next three lines are for the fuzzy search in .vimrc:
-:set nocompatible - Limit search to your project
-:set path+=** - Search all subdirectories and recursively
-:set wildmenu - Shows multiple matches on one line
+set nocompatible - Limit search to your project
+set path+=** - Search all subdirectories and recursively
+set wildmenu - Shows multiple matches on one line
 :vimgrep /regex/[option] target - Search for the regular expression in the target file/directory,
 with the g option it will count the occurencies
 :copen of :cope or :cw - open the list of the regex occurencies

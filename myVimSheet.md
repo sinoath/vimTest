@@ -17,6 +17,8 @@ Topics:
 - [Split windows](#split-windows)
 - [Tabs windows](#tabs-windows)
 - [Folding text](#folding-text)
+- [netrw](#netrw)
+- [Registers](#registers)
 
 ### Paging, how to move inside a text
 
@@ -269,7 +271,72 @@ Folds can be nested:<br>
 `zR` and `zR` - act like `zC` and `zO` but for all folds<br>
 [back to index](#custom-vim-sheet)
 
-	another for test
+
+###netrw
+
+vim [nameDir] - Open vim netrw plugin for the directory 'nameDir'
+in netrw:
+- `gh` - show/hide the dot files
+- `I` - show/hide the top banner
+- `s` - change file sorting filter
+
+moving the cursor up with the vim motions (`hjkl`) the top part of netrw shows hints, commands,
+shortcuts, quick help and so on
+to change a setting in this section press `ENTER` (for example to change the sort filter)
+when navigating inside directories, we can select a file with `ENTER` to open it, but using `:q` will close
+vim completelly.
+with the cursor on a file we can split open it
+- `o` - horizontally
+- `v` - vertically
+- `p` - preview it
+preview is (by default) a horizontal split open window, but leave the cursor on netrw, while 'o' and 'v' do not
+`:let g:netrw preview=1` - change the split preview from horizontal to vertical
+the vertical split will open to the left, unless specifing to open on the right side with the command `:let g:netrw altv=1`
+`:Vex` or `:Sex` - when a file is opened in vim, these commands split open vertically or horizontally a netrw window
+These next three lines are for the fuzzy search in .vimrc:
+`set nocompatible` - Limit search to your project
+`set path+=\*\*` - Search all subdirectories and recursively
+`set wildmenu` - Shows multiple matches on one line
+`:vimgrep /regex/[option] target` - Search for the regular expression in the target file/directory,
+with the g option it will count the occurencies
+`:copen` of `:cope` or `:cw` - open the list of the regex occurencies
+`:cnext` and `:cprev` - move to the next/previous regex occurency
+`:cfirst` and `:clast` - move to the first/last occurency
+How to search in the entire project directory (it is set when vim opens):
+`:pwd` - show the actual directory
+`:vimgrep /regex/g **/*` - this target means to search in the entire project directory (fuzzy search fix NEEDED)
+[back to index](#custom-vim-sheet)
+
+
+
+
+###Registers
+
+Registers are memory locations vim uses to store yanked and deleted text, or macros<br>
+`"[letter]` - is used to call [letter] register, in NORMAL and VISUAL mode<br>
+so appending to a register call an action like yank, delete or change, the text will be stored in that register<br>
+`ctrl-r` - call a register in INSERT mode and write it<br>
+`:reg` - show registers list<br>
+`"[uppercase-letter]` - will **append** the text to the conent of the **letter** register<br>
+Special registers.<br>
+- `""` - default register, overwritten everytime some register is changed (including standard use of yank, delete and so on)<br>
+- `"/` - contains latest string used for a search forward<br>
+- `"?` - contains latest string used for a search backward<br>
+- `"*` - store the 'under the cursor' search<br>
+- `"%` - name of the file<br>
+- `":` - last command issued in command mode<br>
+- `".` - register that contain the command to repeat with the `.` in vim<br>
+- `"-` - register used to store deleted text<br>
+- `"0` - register used as a 'backup' when yanking<br>
+- `"1` to "9 - register used as a 'backup' when deleting lines<br>
+
+[back to index](#custom-vim-sheet)
+
+
+
+
+
+another for test
 
 
 
