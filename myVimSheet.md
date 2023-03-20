@@ -31,8 +31,8 @@
 
 ### Paging, how to move inside a text
 
-`h` and `l` - move left/right the cursor by one character
-`j` and `k` - move down/up the cursor by one line
+`h` and `l` - move left/right the cursor by one character<br>
+`j` and `k` - move down/up the cursor by one line<br>
 `ctrl-f` and `ctrl-b` - move Forward/Back 1 page at a time<br>
 `ctrl-u` and `ctrl-d` - move Up/Down half a page at a time<br>
 `ctrl-e` or `ctrl-y` - scroll the page down or up one line leaving the cursor in place<br>
