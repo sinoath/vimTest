@@ -312,7 +312,9 @@ ctrl-r - call a register in INSERT mode and write it
 "[uppercase_letter] - will **append** the text to the conent of the **letter** register
 Special registers.
 - " - default register, overwritten everytime some register is used (including standard use of yank, delete and so on)
-- "/ - register that stores the location of the file opened
+- "/ - contains latest string used for a search forward
+- "? - contains latest string used for a search backward
+- "* - store the 'under the cursor' search
 - "% - name of the file
 - ": - last command issued in command mode
 - ". - register that contain the command to repeat with the `.` in vim
