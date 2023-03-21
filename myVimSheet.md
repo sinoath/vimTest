@@ -2,8 +2,8 @@
 
 | Topics: |  |
 | :-- | :-- |
-|  [Paging, how to move inside a text](#paging-how-to-move-inside-a-text) | - [Tab](#tab)
-|  [Copy/paste (yank/put)](#copypaste-yankput) | - [Buffers](#buffers)
+|  [Paging, how to move inside a text](#paging-how-to-move-inside-a-text) | [Tab](#tab)
+|  [Copy/paste (yank/put)](#copypaste-yankput) | [Buffers](#buffers)
 |  [Words and i for inner](#words-and-i-for-inner) | [Split windows](#split-windows)
 |  [search and highlighting](#search-and-highlighting) | [Tabs windows](#tabs-windows)
 |  [replace](#replace) | [Folding text](#folding-text)
