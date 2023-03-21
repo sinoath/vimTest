@@ -5,43 +5,30 @@
 |  [Paging, how to move inside a text](#paging-how-to-move-inside-a-text) | [Tab](#tab)
 |  [Copy/paste (yank/put)](#copypaste-yankput) | [Buffers](#buffers)
 |  [Words and i for inner](#words-and-i-for-inner) | [Split windows](#split-windows)
-|  [search and highlighting](#search-and-highlighting) | [Tabs windows](#tabs-windows)
+|  [Search and Highlighting](#search-and-highlighting) | [Window tabs](#window-tabs)
 |  [replace](#replace) | [Folding text](#folding-text)
 |  [Info line, Sort, Join, View, Read](#info-line-sort-join-view-read) | [netrw](#netrw)
 |  [Jump list, change list](#jump-list-change-list) | [vimgrep](#vimgrep)
-|  [Marks](#marks) | [Registers](#registers)
+|  [Marks](#marks) | [Registers](#registers) | [Registers](#registers)
 |  [Find in line](#find-in-line)
 |  [Visual mode](#visual-mode)
 |  [.vimrc file](#vimrc-file)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 ### Paging, how to move inside a text
 
 `h` and `l` - move left/right the cursor by one character<br>
 `j` and `k` - move down/up the cursor by one line<br>
+`0` and `$` - move the cursor to the first/last non blank character in a line<br>
 `ctrl-f` and `ctrl-b` - move Forward/Back 1 page at a time<br>
 `ctrl-u` and `ctrl-d` - move Up/Down half a page at a time<br>
 `ctrl-e` or `ctrl-y` - scroll the page down or up one line leaving the cursor in place<br>
-a number [n] before this command set how many times execute this movement<br>
+if the current cursor line remain visible, otherwise the cursor will follow the scrolling.<br>
+A number [n] before the commands above set how many times execute this movement<br>
 `gg` and `G` - move to the top or the bottom of the text<br>
-a number [n] before this command set the absolute line number the cursor move to<br>
+A number [n] before the commands above set the absolute line number the cursor move to<br>
 `M` or `H` or `L` - move the cursor to the Middle, top (High) or bottom (Low) of the page<br>
 `zz`, `zt`, `zb` - move the current line to the middle (z), to the top (t) or to the bottom (b)<br>
-(if the current cursor line remain visible, otherwise the cursor will follow the scrolling)<br>
 [back to index](#custom-vim-sheet)
 
 ### Copy/paste (yank/put)
@@ -49,33 +36,36 @@ a number [n] before this command set the absolute line number the cursor move to
 `[n]Y` - yanks the entire line [n] number of time<br>
 `[n]D` - delete [n] number of line, starting at the cursor position<br>
 `[n]yy` or `[n]dd`	- yank or put [n] lines (copy/paste)<br>
+`y` and `d` can be used in combination of any kind of 'cursor movement' or text object<br>
 `:set relativenumber` - show the line relative numbering<br>
-`:set number` - show the absolute line numbering (both can be used at the same time)<br><br>
+`:set number` - show the absolute line numbering (both can be used at the same time)<br>
 [back to index](#custom-vim-sheet)
 
 ### Words and i (for inner)
 
 `[n]w` move to the start of the next word, <br>
-`[n]W` same, but ignoring special characters like.the.dot [n] times<br>
-`[n]e` move to the end of the next word, E ignore the special characters<br>
-`[n]ge` same but backwards, gE ignore special characters<br>
+`[n]W` same, but ignoring special characters like the dot or underscore [n] times<br>
+`[n]e` move to the end of the next word, `E` ignore the special characters<br>
+`[n]ge` same but backwards, `gE` ignore special characters<br>
 `D` or `C` - delete or change from the cursor position to the end of the line<br>
 `i` - select inside a text object (word, parenthesis, quotes and so on)<br>
 [back to index](#custom-vim-sheet)
 
-### search and highlighting
+### Search and Highlighting
 
-`/`	- start the search of a characters pattern<br>
+`/`	- start the search forward of a characters pattern<br>
+`?`	- start the search backward of a characters pattern<br>
 `*`	- search forward every occurency of the word under cursor<br>
 `#`	- same, but backward<br>
-`:nohl`	- set temporary off the highlight<br>
 `:set [no]hlsearch`	- set highlight on/off<br>
 `:set [no]incsearch` -  this enable the incremental highlight on search (on/off)<br>
-`/\c`	- search case insensitive pattern of characters<br>
+Once search is used, highlight stays on until it is manually turned off<br>
+`:nohl`	- set temporary off the highlight<br>
+`/\c` - search case insensitive pattern of characters<br>
 `\`	- used as an escape character to search for a special one (like `/\*` search for an asterisk) <br>
 [back to index](#custom-vim-sheet)
 
-### replace
+### Replace
 `:[n],[m]s/this/that` - search from line 'n' to line 'm' the word 'this' and substitute with 'that'<br>
 `:%s/this/that` - same, but search the entire document<br>
 `/g` - means globally, every occurrency, at the end of a search and replace command<br>
@@ -98,7 +88,7 @@ to join more than 1 line at a time<br>
 `:read` - read the content of a file and insert it on cursor position<br>
 [back to index](#custom-vim-sheet)
 
-### Jump list, change list:
+### Jump list, Change list:
 
 `g,` - Go forwart to the next (more recent) edit point of the text<br>
 `g;` - same, going backwards<br>
@@ -215,18 +205,18 @@ buffer 2 as a new window)<br>
 - `w` switch window cycling through them<br>
 - `hjkl` move to the window vim-style, so 'h' left, 'j'down and so on<br>
 - `x` swap windows<br>
-- `r` or 'R' rotate the split windows in one direction or the opposite<br>
-- `t` or 'b' move to the (t)op left window or the (b)ottom right window<br>
+- `r` or `R` rotate the split windows in one direction or the opposite<br>
+- `t` or `b` move to the (t)op left window or the (b)ottom right window<br>
 - `p` move to the previous window<br>
 - `s` split window<br>
 - `=` make the windows eaqually sized<br>
-- `-` or '|' maximizes height/width of the current window<br>
+- `-` or `|` maximizes height/width of the current window<br>
 - `o` shows (o)nly the current window, putting into buffers the other ones<br>
 
 `:help ctrl-w` - open a comprehensive help page for split windows commands<br>
 [back to index](#custom-vim-sheet)<br>
 
-### Tabs windows
+### Window tabs
 
 `:tabedit` or `tabe [filename]` - open a new tab same way as split commands, with the file itself or "filename"<br>
 `:tabn [n]` or `:tabp [n]` - got to the [n] next/previous tab<br>
@@ -349,8 +339,9 @@ Special registers.<br>
 - `".` - register that contain the command to repeat with the `.` in vim<br>
 - `"-` - register used to store deleted text<br>
 - `"0` - register used as a 'backup' when yanking<br>
-- `"1` to "9 - register used as a 'backup' when deleting lines<br>
-
+- `"1` to `"9` - registers used as a 'backup' when deleting lines, 1 being the most recent<br>
+`:let @[letter]=""` - delete the content of a register, or store the text inside quotes. Another use for this
+command is to copy a register into another one: `let @n=@m`<br>
 [back to index](#custom-vim-sheet)
 
 
