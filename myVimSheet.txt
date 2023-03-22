@@ -323,10 +323,26 @@ Special registers.
 - "1 to "9 - register used as a 'backup' when deleting lines
 
 ---------
-typo
 
 
-	another for test
+
+
+Bonus topic: Plugins
+
+- tpope/vim-fugitive - add the `:G` or `Git` command, that act like `git` in bash
+- Repeat.vim - from https://tpope.io/vim/repeat.git it make the `.` repeat function able to repeat
+plugins too
+- tpope/vim-surround - surround a text object with quotes, parentheses or even html tags
+	`cs"'` - change the surrounding from `"` to `'`
+	`cst"` - change the surrounding html tag to `"`
+	`ys[movement]"` - add to the movement (or text object) the `"` surround
+	`ds"` - delete the surrond `"` based on the cursor position
+	`yss"` - surround with `"` the entire line
+	`.` - works with `ds`, `cs` and `ys`
+- tpope/vim-commentary - adds/delete comments to text objects and movements based on the file extension
+	`gc[movement` - enable/disable comments for the movement
+
+	"another" for test
 
 
 
