@@ -10,7 +10,7 @@
 |  [Info line, Sort, Join, View, Read](#info-line-sort-join-view-read) | [netrw](#netrw)
 |  [Jump list, change list](#jump-list-change-list) | [vimgrep](#vimgrep)
 |  [Marks](#marks) | [Registers](#registers) | [Registers](#registers)
-|  [Find in line](#find-in-line)
+|  [Find in line](#find-in-line) | [Bonus topic: Plugins](#bonus-topic:-plugins)
 |  [Visual mode](#visual-mode)
 |  [.vimrc file](#vimrc-file)
 
@@ -347,20 +347,22 @@ command is to copy a register into another one: `let @n=@m`<br>
 
 
 
+### Bonus topic: Plugins
 
-another for test
+- tpope/vim-fugitive - add the `:G` or `Git` command, that act like `git` in bash<br>
+- Repeat.vim - from https://tpope.io/vim/repeat.git it make the `.` repeat function able to repeat<br>
+plugins too<br>
+- tpope/vim-surround - surround a text object with quotes, parentheses or even html tags<br>
+	* `cs"'` - change the surrounding from `"` to `'`<br>
+	* `cst"` - change the surrounding html tag to `"`<br>
+	* `ys[movement]"` - add to the movement (or text object) the `"` surround<br>
+	* `ds"` - delete the surrond `"` based on the cursor position<br>
+	* `yss"` - surround with `"` the entire line<br>
+	* `.` - works with `ds`, `cs` and `ys`<br>
+- tpope/vim-commentary - adds/delete comments to text objects and movements based on the file extension<br>
+`gc[movement` - enable/disable comments for the movement<br>
+- michaeljsmith/vim-indent-object - define a new object as an indented text,<br>
+commands are `ii` `ai` `iI` and `aI`<br>
+read https://github.com/michaeljsmith/vim-indent-object for usage<br>
 
 
-
-	this file has no indentation (yet) file
-	this file has no indentation (yet)
-
-just writing other words in here
-for the purpose of learning this editor
-
-
-
-trying branch features
-
-playlist I'm watching:
-https://www.youtube.com/watch?v=1lzXr-MztOU&list=PLy7Kah3WzqrEjsuvhT46fr28Q11oa5ZoI
