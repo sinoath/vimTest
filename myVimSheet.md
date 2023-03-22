@@ -10,7 +10,7 @@
 |  [Info line, Sort, Join, View, Read](#info-line-sort-join-view-read) | [netrw](#netrw)
 |  [Jump list, change list](#jump-list-change-list) | [vimgrep](#vimgrep)
 |  [Marks](#marks) | [Registers](#registers) | [Registers](#registers)
-|  [Find in line](#find-in-line) | [Bonus topic: Plugins](#bonus-topic:-plugins)
+|  [Find in line](#find-in-line) | [Bonus topic: Plugins](#bonus-topic-plugins)
 |  [Visual mode](#visual-mode)
 |  [.vimrc file](#vimrc-file)
 
