@@ -341,6 +341,13 @@ plugins too
 	`.` - works with `ds`, `cs` and `ys`
 - tpope/vim-commentary - adds/delete comments to text objects and movements based on the file extension
 	`gc[movement` - enable/disable comments for the movement
+- michaeljsmith/vim-indent-object - define a new object as an indented text,
+	read https://github.com/michaeljsmith/vim-indent-object for usage
+
+
+
+
+
 
 	"another" for test
 
