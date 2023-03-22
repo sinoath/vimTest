@@ -349,9 +349,9 @@ command is to copy a register into another one: `let @n=@m`<br>
 
 ### Bonus topic: Plugins
 
-- tpope/vim-fugitive - add the `:G` or `Git` command, that act like `git` in bash<br>
-- Repeat.vim - from https://tpope.io/vim/repeat.git it make the `.` repeat function able to repeat<br>
+- Repeat.vim - from https://tpope.io/vim/repeat.git it makes the `.` repeat function able to repeat<br>
 plugins too<br>
+- tpope/vim-fugitive - add the `:G` or `Git` command, that act like `git` in bash<br>
 - tpope/vim-surround - surround a text object with quotes, parentheses or even html tags<br>
 	* `cs"'` - change the surrounding from `"` to `'`<br>
 	* `cst"` - change the surrounding html tag to `"`<br>
@@ -360,9 +360,11 @@ plugins too<br>
 	* `yss"` - surround with `"` the entire line<br>
 	* `.` - works with `ds`, `cs` and `ys`<br>
 - tpope/vim-commentary - adds/delete comments to text objects and movements based on the file extension<br>
-`gc[movement` - enable/disable comments for the movement<br>
-- michaeljsmith/vim-indent-object - define a new object as an indented text,<br>
-commands are `ii` `ai` `iI` and `aI`<br>
-read https://github.com/michaeljsmith/vim-indent-object for usage<br>
+`gc[movement]` - enable/disable comments for the movement (or the text object)<br>
+- michaeljsmith/vim-indent-object - define a new object as an indented text, commands are:<br>
+* `<count>ai` - An Indentation level and line above.<br>
+* `<count>ii` - Inner Indentation level (no line above).<br>
+* `<count>aI` - An Indentation level and lines above/below.<br>
+* `<count>iI` - Inner Indentation level (no lines above/below).<br>
 
 
