@@ -19,23 +19,24 @@
 
 `h` and `l` - move left/right the cursor by one character<br>
 `j` and `k` - move down/up the cursor by one line<br>
-`0` and `$` - move the cursor to the first/last non blank character in a line<br>
+`0` and `$` - move the cursor to the first/last character in a line<br>
+`^` and `g_` - move the cursor to the first/last non blank character in the line<br>
 `ctrl-f` and `ctrl-b` - move Forward/Back 1 page at a time<br>
 `ctrl-u` and `ctrl-d` - move Up/Down half a page at a time<br>
 `ctrl-e` or `ctrl-y` - scroll the page down or up one line leaving the cursor in place<br>
 if the current cursor line remain visible, otherwise the cursor will follow the scrolling.<br>
-A number [n] before the commands above set how many times execute this movement<br>
+A number [count] before the commands above set how many times execute this movement<br>
 `gg` and `G` - move to the top or the bottom of the text<br>
-A number [n] before the commands above set the absolute line number the cursor move to<br>
+A number [count] before the commands above set the absolute line number the cursor move to<br>
 `M` or `H` or `L` - move the cursor to the Middle, top (High) or bottom (Low) of the page<br>
 `zz`, `zt`, `zb` - move the current line to the middle (z), to the top (t) or to the bottom (b)<br>
 [back to index](#custom-vim-sheet)
 
 ### Copy/paste (yank/put)
 
-`[n]Y` - yanks the entire line [n] number of time<br>
-`[n]D` - delete [n] number of line, starting at the cursor position<br>
-`[n]yy` or `[n]dd`	- yank or put [n] lines (copy/paste)<br>
+`[count]Y` - yanks the entire line [count] number of time<br>
+`[count]D` - delete [count] number of line, starting at the cursor position<br>
+`[count]yy` or `[count]dd`	- yank or put [count] lines (copy/paste)<br>
 `y` and `d` can be used in combination of any kind of 'cursor movement' or text object<br>
 `:set relativenumber` - show the line relative numbering<br>
 `:set number` - show the absolute line numbering (both can be used at the same time)<br>
@@ -43,10 +44,10 @@ A number [n] before the commands above set the absolute line number the cursor m
 
 ### Words and i (for inner)
 
-`[n]w` move to the start of the next word, <br>
-`[n]W` same, but ignoring special characters like the dot or underscore [n] times<br>
-`[n]e` move to the end of the next word, `E` ignore the special characters<br>
-`[n]ge` same but backwards, `gE` ignore special characters<br>
+`[count]w` move to the start of the next word, <br>
+`[count]W` same, but ignoring special characters like the dot or underscore [count] times<br>
+`[count]e` move to the end of the next word, `E` ignore the special characters<br>
+`[count]ge` same but backwards, `gE` ignore special characters<br>
 `D` or `C` - delete or change from the cursor position to the end of the line<br>
 `i` - select inside a text object (word, parenthesis, quotes and so on)<br>
 [back to index](#custom-vim-sheet)
@@ -90,11 +91,12 @@ to join more than 1 line at a time<br>
 
 ### Jump list, Change list:
 
-`g,` - Go forwart to the next (more recent) edit point of the text<br>
+`g,` - Go forwart to the next edit (change) point of the text<br>
 `g;` - same, going backwards<br>
-`gi` - place the cursor at the last insert position and enter INSERT mode<br>
 `^o` - move to the previous jump<br>
 `^i` - move to the next jump<br>
+a [count] number before these commands executes them [count] number of time<br>
+`gi` - place the cursor at the last insert position and enter INSERT mode<br>
 `:changes` - open the whole list of changes made inside the text<br>
 `:jumps` - open the jumps list. Vim considers jumps: the use of marks, search or replaces, open a different file.<br>
 Paging or scrolling through the page (like using hjkl) are NOT considered jumps<br>
@@ -102,23 +104,20 @@ Paging or scrolling through the page (like using hjkl) are NOT considered jumps<
 
 ### Marks:
 
-`m[letter]` - set a (book)mark, lowercase for just the file, uppercase globally.<br>
-meaning that every file can have an 'a' mark, just one file can have 'A' mark<br>
+`m[letter]` - set a (book)mark, lowercase for just the file, uppercase globally. With upper case mark,<br>
+it will jump to the file that have that mark set. Every file can have 'a' mark, just one file can have 'A' mark<br>
 `'a` or` ``a` - move to the line or the line and character when **a** mark was set<br>
-Any lower case letter can be used as a mark.<br>
-Changing file if using **uppercase letter**, if it was set on a different file<br>
-(set a mark on the 's' of 'Marks' word to try<br>
 `['` and `]'` - navigate marks lines, backward/forward<br>
 `[`` `and `]`` `- same but for lines and character position<br>
 `:marks` - show the list of (book)marks<br>
-`:delmarks` - appending `!` delete all marks, adding `c-f` delete a range of marks (c through f), <br>
-`a f T` delete a specific list of marks (marks a, f and T in this case)<br>
+`:delmarks` - appending `!` delete all marks, adding ` c-f` delete a range of marks (c through f), <br>
+` a f T` delete a specific list of marks (marks a, f and T in this case)<br>
 [back to index](#custom-vim-sheet)
 
 ### Find in line:
 
 `f[character]` or `F[character]` - find the next or previous [character] in current line<br>
-`t[character]` or `T[character]` - same but it stops one character the [character], so it search Till **[character]**<br>
+`t[character]` or `T[character]` - same but it stops one character, so it search Till **[character]**<br>
 both of them can be combined with yank and delete commands<br>
 `d/[pattern]` - delete in line all character forward up until **[pattern]** , NOT including [pattern]<br>
 `d?[pattern]` - same but backward, it will erase all characters INCLUDING [pattern]<br>
@@ -126,44 +125,53 @@ both of them can be combined with yank and delete commands<br>
 
 ### Visual mode:
 
-`v` - enter visual mode; V - enter in **visual line** mode<br>
+`v` - enter visual mode; `V` - enter in **visual line** mode<br>
 `ctrl-v` - enter in the **visual block** mode<br>
-now I can select the text using the same commands to move the cursor (hjkl, w, e and so on)<br>
-or the find in line commands. i can be used as 'in', like 'i(' select all text inside the parenthesis<br>
+This modes can select the text using the same commands to move the cursor (hjkl, w, e and so on)<br>
+or the find in line commands. `i` can be used as `in`, like `i(` select all text inside the parenthesis<br>
 `y` and `p` - yank and paste the selected text. IPORTANT: when pasting something, the 'visual mode buffer'<br>
 will be overwritten but the new selected text, useful for switch a pattern, not for pasting more than once<br>
+`c` - delete the selected text and change to INSERT mode
 [back to index](#custom-vim-sheet)
 
 ### .vimrc file
 
 `nmap` - map a key to execute a command in normal mode<br>
 `imap` - same, but in insert mode<br>
+`nnoremap` - set a **no recursive** mapping, meaning it can call itself, in NORMAL mode
+`inoremap` - same but for INSERT mode
 `let mapleader = '[key]'` - set a key as **leader** so that pressing that key and a shortcut execute a command<br>
 (as an example setting `,` as leader, some action can be assigned to `,i` avoiding to enter in INSERT mode)<br>
 `abbr [pattern-a][pattern-b]` - writing `pattern-a` and a space, it will write `pattern-b`<br>
+Fix fuzzy search:<br>
+`set nocompatible` - Limit search to your project<br>
+`set path+=\*\*` - Search all subdirectories and recursively<br>
+`set wildmenu` - Shows multiple matches on one line<br>
 [back to index](#custom-vim-sheet)
 
 ### Tab
 
-`<<` or `>>` - outdent or indent a line. Can be combined with [n]j or [n]k to indent/outdent current line and the [n]<br>
+`<<` or `>>` - outdent or indent a line.<br>
+`<` or `>`hcan be combined with [count]j or [count]k to indent/outdent current line and the [count]<br>
 lines below/above. Visual select could also be used to select lines and outdent/indent. All apply in NORMAL mode<br>
 In INSERT mode TAB key is used to indent/outdent (TIP - `:set list` show invisible characters like tab or CR)<br>
-in this mode pressing `ctrl-v` and typing u0009, will insert a 'TAB character' (visible as `^I` when using `:set list`)<br>
+in this mode pressing `ctrl-v` and typing u0009, will insert a 'TAB character'<br>
+(visible as `^I` when using `:set list`)<br>
 Alternatively pressing `ctrl-v` and `ctrl-i` do the same thing<br>
 Invisible characters can be customized, unicode symbol for TAB is u2192 and unicode symbol for eol is u21b2<br>
 in .vimrc file using `set listchars=tab:` and typing `ctrl-v` followed by the unicode u2192 we can set TAB invisible<br>
 character. appending to the same line `\ ,eol:` and typing `ctrl-v` and than `u21b2` I can change eol character too<br>
-`:set expandtab` - Convert a TAB in a number of spaces characters, apply to << and >> too<br>
+`:set expandtab` - Convert a TAB in a number of spaces characters, apply to `<<` and `>>` too<br>
 `:set noexpandtab` - revert to the TAB character<br>
-`:set sw` or `:set swiftwidth` - show how many spaces the TAB character will be converted to, appen '=[n]' to set this number to n<br>
-`:set ts` or `:set tabstop` - show how many 'spaces wide' are TAB characters, append `=[n]` to set as "n spaces wide"<br>
+`:set sw` or `:set swiftwidth` - show how many spaces the TAB character will be converted to, appen `=[count]` to set this number to count<br>
+`:set ts` or `:set tabstop` - show how many 'spaces wide' are TAB characters, append `=[count]` to set as "count spaces wide"<br>
 `:set sts` of `:set softtabstop` - set the TAB stop in INSERT mode, if set to 0 it will follow the tabstop setting.<br>
-As the previous commands, append `=[n]` to set as 'n number of spaces wide'<br>
+As the previous commands, append `=[count]` to set as 'count number of spaces wide'<br>
 - Behaviour: if `set tabstop=4` `set softtabstop=0` `set expandtab` are used<br>
 in INSERT mode a TAB will insert 4 spaces, and will treat as 4 characters, hence got to press BACKSPACE 4 times to delete<br>
 - Behaviour: if `set tabstop=4` `set softtabstop=4` `set expandtab` are used<br>
-in INSERT mode TAB write spaces like before, but BACKSPACE cancel all the spaces at once BUT ONLY IF no more spaces are added<br>
-this way BACKSPACE needs to be used 5 times (with the settings above) to delete the TAB<br>
+in INSERT mode TAB write spaces like before, but BACKSPACE cancel all the spaces at once UNLESS more spaces are added<br>
+Adding a space, BACKSPACE needs to be used 5 times (with the settings above) to delete the TAB<br>
 `:set ts sts sw` - show all three settings at once; in general they are set to the same number of spaces<br>
 `filetype indent on` - in .vimrc set custom indentation based on different file types.<br>
 `autocmd Filetype cpp setlocal noexpandtab ts=4 sts=4 sw=4` - in .vimrc set custom values everytime a cpp file is loaded in vim<br>
@@ -173,35 +181,30 @@ this way BACKSPACE needs to be used 5 times (with the settings above) to delete 
 ### Buffers
 
 `:buffers` or `:ls` - show the list of buffers. `#` mean the previous one, `%a` means active buffer<br>
-a `+` means there are unsaved changes in that buffer<br>
+a `+` means there are unsaved changes in that buffer, `h` means hidden<br>
 `:edit` or `:e filename` - open in edit mode filename, putting the previous file in a buffer<br>
-`:e!` - put the file in the last saved state, in other words in the state the file was last time wass issued :w<br>
+`:e!` - put the file in the last saved state, in other words revert all changes to the last `:w` issued<br>
 `:bp` or `bn` - go to the previous/next buffer (inside the buffers list)<br>
 `:set hidden` - avoid to show warning message when switching buffer without saving changes in the current one<br>
 this apply to all files in the buffer, not just the current one<br>
-`:bd` - delete a buffer. If a change was made on that file, it'll show a warning message, <br>
-even if `:set hidden` was set<br>
+`:bd` - delete a buffer.<br>
+If a change was made on that file, it'll show a warning message, <br> even if `:set hidden` was set<br>
 [back to index](#custom-vim-sheet)
 
 ### Split windows
 
-`:sp` or `:vsp` - split window horizontally or vertically, even for the same file. So I can work on different places<br>
+`:sp` or `:vsp` - split window horizontally or vertically, for the same file. So I can work on different places<br>
 of the text/code inside the file<br>
-appending 'filename', it will split open filename instead of a copy of the file itself<br>
+appending ` filename`, it will split open filename instead of a copy of the file itself<br>
 `:set splitright` - invert the default behavior, showing the vertical split window to the right instead of left<br>
-`:resize` - accept numbers for an absolute resizing, or +/-[n] for relative resizing<br>
+`:resize` - accept numbers for an absolute resizing, or +/-[count] for relative resizing<br>
 `:vertical resize` - same but vertically<br>
-`:ba` or :ball - shows all buffers in split windows<br>
+`:ba` or `:ball` - shows all buffers in split windows<br>
 `:vert ba` - same but vertically<br>
-`:[vert] 3ba` -  shows the first 3 buffers<br>
-`:vsp | b2` - open the buffer 2 in a vertical split window (mandatory use of '|' character, otherwise it'll open<br>
-buffer 2 as a new window)<br>
-`:ba` or `:ball `- shows all buffers in split windows<br>
-`:vert ba` - same but vertically<br>
-`:[vert] 3ba` -  shows the first 3 buffers<br>
-`:vsp | b2` - open the buffer 2 in a vertical split window (mandatory use of '|' character, otherwise it'll open<br>
-buffer 2 as a new window)<br>
-`ctrl-w` - escape command for windows. (remapped to Alt-a, tmux style) After that:<br>
+`:[vert] 3ba` -  shows the first 3 buffers horizontally [vertically]<br>
+`:vsp | b2` - open the buffer 2 in a vertical split window (mandatory use of '|' character,<br>
+otherwise it'll open buffer 2 as a new window)<br>
+`ctrl-w` - escape command for windows. Commands after the escape are:<br>
 - `w` switch window cycling through them<br>
 - `hjkl` move to the window vim-style, so 'h' left, 'j'down and so on<br>
 - `x` swap windows<br>
@@ -212,25 +215,26 @@ buffer 2 as a new window)<br>
 - `=` make the windows eaqually sized<br>
 - `-` or `|` maximizes height/width of the current window<br>
 - `o` shows (o)nly the current window, putting into buffers the other ones<br>
+- `T` close the split window and open it in a new Tab. See [Window tabs](#window-tabs)
 
 `:help ctrl-w` - open a comprehensive help page for split windows commands<br>
 [back to index](#custom-vim-sheet)<br>
 
 ### Window tabs
 
-`:tabedit` or `tabe [filename]` - open a new tab same way as split commands, with the file itself or "filename"<br>
-`:tabn [n]` or `:tabp [n]` - got to the [n] next/previous tab<br>
-`[n]gt` or `[n]gT` do the same<br>
+`:tabedit` or `tabe [filename]` - open a new tab same way as split commands, with the file itself or `filename`<br>
+`:tabn [count]` or `:tabp [count]` - got to the [count] next/previous tab<br>
+`[count]gt` or `[count]gT` do the same in NORMAL mode<br>
 `:tabnew` - open an empty new tab. The time is unnamed untile a file is saved.<br>
 The tab have the same name of the split window I'm in<br>
-`:tabm [n]` - move the tab to the [n] position, 0 meaning the far left. If no [n] are typed, move the tab to the far right<br>
+`:tabm [count]` - move the tab to the [count] position, 0 meaning the far left. If no [count] are typed, move the tab to the far right<br>
 `:tabclose` or `:q` - close a single tab and put it in a buffer<br>
-`:tabclose n` - closes the n tab, far left is 1<br>
+`:tabclose [count]` - closes the [count] tab, far left is 1<br>
 `:tab ball` - opens all the buffers in separate tabs, limited to tabepagemax value<br>
-`:tab sb [n]` - open a new tab with the [n] buffer in it (see Buffer section sb or splitbuffer)<br>
-`:set tabpagemax [n]` - set the max number of tabs, or shows the setting if no [n] is typed<br>
+`:tab sb [count]` - open a new tab with the `[count]` buffer in it (see Buffer section sb or splitbuffer)<br>
+`:set tabpagemax [count]` - set the max number of tabs, or shows the setting if no `[count]` is typed<br>
 `:tabonly` - close all tabs but the one I'm currently in<br>
-`:drop [filename]` - substitute with a 'filename' tab the current one. If the file is already open in a tab, will move to that tab<br>
+`:drop [filename]` - substitute with a `filename` tab the current one. If the file is already open in a tab, will move to that tab<br>
 - split windows can be used inside a tab, see [Split](#split-windows) section<br>
 `:tab split` - open the current split window in a new tab, leaving the split in place<br>
 `ctrl-w T` - same as tab split, but closes the split window too<br>
@@ -242,27 +246,27 @@ The tab have the same name of the split window I'm in<br>
 
 **TIP:** Easier to practice with a code file (python, css, cpp or else)<br>
 folds are lost on file close, unless a mkview file is created (and loaded after the file is open)<br>
-can add a section in .vimrc to auto make a view and silently auto load a view (see .vimrc file)<br>
+can add a section in .vimrc to auto make a view and silently auto load a view (see [.vimrc file](#vimrc-file))<br>
 `:mkview` - create a make view file (mkview)<br>
 `:loadview` - load a previously saved view<br>
 `:set foldmethod` or `:set fdm` - show (or set) the fold method in use. The default one is 'manual'<br>
 `:[n],[m]fold` or `[n],[m]fo` - create a fold from line 'n' to line 'm'<br>
 `:,+[n]fo` - create a fold for the current line and the next 'n' lines<br>
 `:,-[n]fo` - same but the previous [n] lines<br>
-`zf` - after a visual selection, it will create a fold. ('z' remind of a folding paper, many commands use it)<br>
+`zf` - after a visual selection, it will create a fold. ('z' remind of a folding paper)<br>
 `zo` and `zc` - open/close a fold<br>
-`zf[motion]` - create a folder based on that motion exemples are:<br>
+`zf[motion]` - create a folder based on that motion, examples are:<br>
 - `zf2j` create a fold for current line and 2 lines under<br>
 - `zfip` create a fold for the paragraph the cursor is in<br>
 - `zfa{` create a fold for a code block inside curly braces<br>
 - `va{` and `zf` has the same effect, first command visual select text inside curly braces, and `zf` create the fold<br>
 
-`zn` - open all folders, but if a folder was manually closed it stay closed<br>
+`zn` - open all folders, but if a folder was manually closed it stays closed<br>
 `zN` - close all folders, but if a folder was manually opened it stays opened<br>
-`:[n][m] foldopen` - open folds from line 'n' to line 'm'.<br>
-`:[n][m] foldclose` - close folds from line 'n' to line 'm'.<br>
+`:[count][m] foldopen` - open folds from line 'count' to line 'm'.<br>
+`:[count][m] foldclose` - close folds from line 'count' to line 'm'.<br>
 `:% foldopen` - select the entire document and open all folds. Same apply to foldclose<br>
-`zj` and `zk` - move to the next/previous folder. IMPORTANT: zk move the cursor to the last line of the previous folder!<br>
+`zj` and `zk` - move to the next/previous folder. IMPORTANT: `zk` move the cursor to **the last line** of the previous folder!<br>
 `[z` and `]z` - move to cursor to the top/bottom line of the current folder<br>
 `zd` - delete the current folder<br>
 `zE` - delete all the folders in the document<br>
@@ -276,7 +280,7 @@ Folds can be nested:<br>
 
 ### netrw
 
-vim [nameDir] - Open vim netrw plugin for the directory 'nameDir'<br>
+`vim nameDir` - Open vim netrw plugin for the directory `nameDir`<br>
 in netrw:<br>
 - `gh` - show/hide the dot files<br>
 - `I` - show/hide the top banner<br>
@@ -293,7 +297,7 @@ with the cursor on a file we can split open it<br>
 - `p` - preview it<br>
 
 preview is (by default) a horizontal split open window, but leave the cursor on netrw,<br>
-while 'o' and 'v' split open the window **and** move the cursor to it<br>
+while `o` and `v` split open the window **and** move the cursor to it<br>
 `:let g:netrw preview=1` - change the split preview from horizontal to vertical<br>
 the vertical split will open to the left, unless specifing to open on the right side with the command `:let g:netrw altv=1`<br>
 `:Vex` or `:Sex` - when a file is opened in vim, these commands split open vertically or horizontally a netrw window<br>
@@ -325,7 +329,7 @@ How to search in the entire project directory (it is set when vim opens):<br>
 
 Registers are memory locations vim uses to store yanked and deleted text, or macros<br>
 `"[letter]` - is used to call [letter] register, in NORMAL and VISUAL mode<br>
-so appending to a register call an action like yank, delete or change, the text will be stored in that register<br>
+Appending to a register call an action like yank, delete or change, the text will be stored in that register<br>
 `ctrl-r` - call a register in INSERT mode and write it<br>
 `:reg` - show registers list<br>
 `"[uppercase-letter]` - will **append** the text to the conent of the **letter** register<br>
@@ -341,7 +345,10 @@ Special registers.<br>
 - `"0` - register used as a 'backup' when yanking<br>
 - `"1` to `"9` - registers used as a 'backup' when deleting lines, 1 being the most recent<br>
 `:let @[letter]=""` - delete the content of a register, or store the text inside quotes.<br>
-Another use for this command is to copy a register into another one: `let @n=@m`<br>
+Another use for this command is to copy a register into another one: `let @count=@m`<br>
+or assign a text string to a register<br>
+TIP: to modify a register (say `m`), `:let @m="`, than `ctrl-r` to call the register in INSERT mode,<br>
+`m` in this case. Edit the string and remember to close the `"`<br>
 [back to index](#custom-vim-sheet)
 
 
