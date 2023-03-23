@@ -340,8 +340,8 @@ Special registers.<br>
 - `"-` - register used to store deleted text<br>
 - `"0` - register used as a 'backup' when yanking<br>
 - `"1` to `"9` - registers used as a 'backup' when deleting lines, 1 being the most recent<br>
-`:let @[letter]=""` - delete the content of a register, or store the text inside quotes. Another use for this
-command is to copy a register into another one: `let @n=@m`<br>
+`:let @[letter]=""` - delete the content of a register, or store the text inside quotes.<br>
+Another use for this command is to copy a register into another one: `let @n=@m`<br>
 [back to index](#custom-vim-sheet)
 
 
