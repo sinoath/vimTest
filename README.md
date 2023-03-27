@@ -1,26 +1,26 @@
 # Vim tutorial and test
-myVimSheet.txt contains some usefull informations
-first part of the file is about Vim infos and commands
-
-Second part of the file contains random text for testing purpose
+myVimSheet.md contains some usefull informations
+about vim commands, plugins and more
 
 ### [List of vim topics](myVimSheet.md)
 - Paging, how to move inside a text
 - Copy/paste (yank/put)
 - Words and i for inner
-- Search and highlight
+- Search and highlighting
 - Replace
 - Info line, Sort, Join, View, Read
 - Jump list, change list
 - Marks
-- Find in lane
+- Find in line
 - Visual mode 
 - .vimrc file
 - Tab
 - Buffers
 - Split window
 - Window tabs
+- Folding text
 - netrw
 - vimgrep
 - Registers
+- Bonus topic: Plugins
 
