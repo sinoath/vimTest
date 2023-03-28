@@ -268,6 +268,7 @@ can add a section in .vimrc to auto make a view and silently auto load a view (s
 `:% foldopen` - select the entire document and open all folds. Same apply to foldclose<br>
 `zj` and `zk` - move to the next/previous folder. IMPORTANT: `zk` move the cursor to **the last line** of the previous folder!<br>
 `[z` and `]z` - move to cursor to the top/bottom line of the current folder<br>
+cursor needs to be inside the fold to work<br>
 `zd` - delete the current folder<br>
 `zE` - delete all the folders in the document<br>
 Folds can be nested:<br>
