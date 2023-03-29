@@ -40,8 +40,8 @@ A number [count] before the commands above set the absolute line number the curs
 `y` and `d` can be used in combination of any kind of 'cursor movement' or text object<br>
 `:set relativenumber` - show the line relative numbering<br>
 `:set number` - show the absolute line numbering (both can be used at the same time)<br>
-`p` - paste after the character or under the line the cursor is in
-`P` - same, but before the caracter or the line above the cursor
+`p` - paste after the character or under the line the cursor is in<br>
+`P` - same, but before the caracter or the line above the cursor<br>
 [back to index](#custom-vim-sheet)
 
 ### Words and i (for inner)
