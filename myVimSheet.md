@@ -44,7 +44,7 @@ A number [count] before the commands above set the absolute line number the curs
 
 ### Words and i (for inner)
 
-`[count]w` move to the start of the next word, <br>
+`[count]w` move to the start of the next word,<br>
 `[count]W` same, but ignoring special characters like the dot or underscore [count] times<br>
 `[count]e` move to the end of the next word, `E` ignore the special characters<br>
 `[count]ge` same but backwards, `gE` ignore special characters<br>
@@ -63,7 +63,7 @@ A number [count] before the commands above set the absolute line number the curs
 Once search is used, highlight stays on until it is manually turned off<br>
 `:nohl`	- set temporary off the highlight<br>
 `/\c` - search case insensitive pattern of characters<br>
-`\`	- used as an escape character to search for a special one (like `/\*` search for an asterisk) <br>
+`\`	- used as an escape character to search for a special one (like `/\*` search for an asterisk)<br>
 [back to index](#custom-vim-sheet)
 
 ### Replace
@@ -73,7 +73,7 @@ Once search is used, highlight stays on until it is manually turned off<br>
 adding `i` is case insensitive, adding `I` is case sensitive<br>
 adding `c` it will ask for a confirm<br>
 `\<word\>` - both in search and replace, it will find 'word' as a single word,<br>
-case insensitive and skipping **password** (i.e. `%s/\<word\>/warlords/gi` will substitute <br>
+case insensitive and skipping **password** (i.e. `%s/\<word\>/warlords/gi` will substitute<br>
 **word** as a single word with **warlords** for the entire document, for every occurrency<br>
 [back to index](#custom-vim-sheet)
 
@@ -110,7 +110,7 @@ it will jump to the file that have that mark set. Every file can have 'a' mark, 
 `['` and `]'` - navigate marks lines, backward/forward<br>
 `[`` `and `]`` `- same but for lines and character position<br>
 `:marks` - show the list of (book)marks<br>
-`:delmarks` - appending `!` delete all marks, adding ` c-f` delete a range of marks (c through f), <br>
+`:delmarks` - appending `!` delete all marks, adding ` c-f` delete a range of marks (c through f),<br>
 ` a f T` delete a specific list of marks (marks a, f and T in this case)<br>
 [back to index](#custom-vim-sheet)
 
@@ -188,7 +188,7 @@ a `+` means there are unsaved changes in that buffer, `h` means hidden<br>
 `:set hidden` - avoid to show warning message when switching buffer without saving changes in the current one<br>
 this apply to all files in the buffer, not just the current one<br>
 `:bd` - delete a buffer.<br>
-If a change was made on that file, it'll show a warning message, <br> even if `:set hidden` was set<br>
+If a change was made on that file, it'll show a warning message,<br> even if `:set hidden` was set<br>
 [back to index](#custom-vim-sheet)
 
 ### Split windows
@@ -299,8 +299,8 @@ with the cursor on a file we can split open it<br>
 
 preview is (by default) a horizontal split open window, but leave the cursor on netrw,<br>
 while `o` and `v` split open the window **and** move the cursor to it<br>
-`:let g:netrw preview=1` - change the split preview from horizontal to vertical<br>
-the vertical split will open to the left, unless specifing to open on the right side with the command `:let g:netrw altv=1`<br>
+`:let g:netrw_preview=1` - change the split preview from horizontal to vertical<br>
+the vertical split will open to the left, unless specifing to open on the right side with the command `:let g:netrw_altv=1`<br>
 `:Vex` or `:Sex` - when a file is opened in vim, these commands split open vertically or horizontally a netrw window<br>
 These next three lines are for the fuzzy search in .vimrc:<br>
 `set nocompatible` - Limit search to your project<br>
