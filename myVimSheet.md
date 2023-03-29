@@ -140,8 +140,8 @@ will be overwritten but the new selected text, useful for switch a pattern, not 
 
 `nmap` - map a key to execute a command in normal mode<br>
 `imap` - same, but in insert mode<br>
-`nnoremap` - set a **no recursive** mapping, meaning it can call itself, in NORMAL mode
-`inoremap` - same but for INSERT mode
+`nnoremap` - set a **no recursive** mapping, meaning it can call itself, in NORMAL mode<br>
+`inoremap` - same but for INSERT mode<br>
 `let mapleader = '[key]'` - set a key as **leader** so that pressing that key and a shortcut execute a command<br>
 (as an example setting `,` as leader, some action can be assigned to `,i` avoiding to enter in INSERT mode)<br>
 `abbr [pattern-a][pattern-b]` - writing `pattern-a` and a space, it will write `pattern-b`<br>
