@@ -12,7 +12,7 @@
 |  [Marks](#marks) | [Registers](#registers) | [Registers](#registers)
 |  [Find in line](#find-in-line) | [Bonus topic: Plugins](#bonus-topic-plugins)
 |  [Visual mode](#visual-mode)
-|  [.vimrc file](#vimrc-file)
+|  [.vimrc file](#vimrc-file) | [Youtube playlist](#youtube-playlist)
 
 
 ### Paging, how to move inside a text
@@ -377,4 +377,6 @@ plugins too<br>
 * `<count>aI` - An Indentation level and lines above/below.<br>
 * `<count>iI` - Inner Indentation level (no lines above/below).<br>
 
+### Youtube playlist
 
+Most of the topics above can be found [here](#https://www.youtube.com/watch?v=1lzXr-MztOU&list=PLy7Kah3WzqrEjsuvhT46fr28Q11oa5ZoI)
