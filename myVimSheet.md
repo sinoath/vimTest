@@ -379,4 +379,4 @@ plugins too<br>
 
 ### Youtube playlist
 
-Most of the topics above can be found [here](#https://www.youtube.com/watch?v=1lzXr-MztOU&list=PLy7Kah3WzqrEjsuvhT46fr28Q11oa5ZoI)
+Most of the topics above can be found [here](https://www.youtube.com/watch?v=1lzXr-MztOU&list=PLy7Kah3WzqrEjsuvhT46fr28Q11oa5ZoI)
