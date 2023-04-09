@@ -25,7 +25,7 @@
 `ctrl-u` and `ctrl-d` - move Up/Down half a page at a time<br>
 `ctrl-e` or `ctrl-y` - scroll the page down or up one line leaving the cursor in place<br>
 if the current cursor line remain visible, otherwise the cursor will follow the scrolling.<br>
-A number [count] before the commands above set how many times execute this movement<br>
+A number `[count]` before the commands above set how many times execute this movement<br>
 `gg` and `G` - move to the top or the bottom of the text<br>
 A number [count] before the commands above set the absolute line number the cursor move to<br>
 `M` or `H` or `L` - move the cursor to the Middle, top (High) or bottom (Low) of the page<br>
