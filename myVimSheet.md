@@ -27,15 +27,15 @@
 if the current cursor line remain visible, otherwise the cursor will follow the scrolling.<br>
 A number `[count]` before the commands above set how many times execute this movement<br>
 `gg` and `G` - move to the top or the bottom of the text<br>
-A number [count] before the commands above set the absolute line number the cursor move to<br>
+A number `[count]` before the commands above set the absolute line number the cursor move to<br>
 `M` or `H` or `L` - move the cursor to the Middle, top (High) or bottom (Low) of the page<br>
 `zz`, `zt`, `zb` - move the current line to the middle (z), to the top (t) or to the bottom (b)<br>
 [back to index](#custom-vim-sheet)
 
 ### Copy/paste (yank/put)
 
-`[count]Y` - yanks the entire line [count] number of time<br>
-`[count]D` - delete [count] number of line, starting at the cursor position<br>
+`[count]Y` - yanks the entire line `[count]` number of time<br>
+`[count]D` - delete `[count]` number of line, starting at the cursor position<br>
 `[count]yy` or `[count]dd`	- yank or put [count] lines (copy/paste)<br>
 `y` and `d` can be used in combination of any kind of 'cursor movement' or text object<br>
 `:set relativenumber` - show the line relative numbering<br>
@@ -47,7 +47,7 @@ A number [count] before the commands above set the absolute line number the curs
 ### Words and i (for inner)
 
 `[count]w` move to the start of the next word,<br>
-`[count]W` same, but ignoring special characters like the dot or underscore [count] times<br>
+`[count]W` same, but ignoring special characters like the dot or underscore `[count]` times<br>
 `[count]e` move to the end of the next word, `E` ignore the special characters<br>
 `[count]ge` same but backwards, `gE` ignore special characters<br>
 `D` or `C` - delete or change from the cursor position to the end of the line<br>
@@ -60,6 +60,7 @@ A number [count] before the commands above set the absolute line number the curs
 `?`	- start the search backward of a characters pattern<br>
 `*`	- search forward every occurency of the word under cursor<br>
 `#`	- same, but backward<br>
+`%` - used on a parentheses, square bracket or curly brace to find the corrisponding one<br>
 `:set [no]hlsearch`	- set highlight on/off<br>
 `:set [no]incsearch` -  this enable the incremental highlight on search (on/off)<br>
 Once search is used, highlight stays on until it is manually turned off<br>
@@ -108,9 +109,9 @@ Paging or scrolling through the page (like using hjkl) are NOT considered jumps<
 
 `m[letter]` - set a (book)mark, lowercase for just the file, uppercase globally. With upper case mark,<br>
 it will jump to the file that have that mark set. Every file can have 'a' mark, just one file can have 'A' mark<br>
-`'a` or` ``a` - move to the line or the line and character when **a** mark was set<br>
+`'a` or `` `a`` - move to the line or the line and character when **a** mark was set<br>
 `['` and `]'` - navigate marks lines, backward/forward<br>
-`[`` `and `]`` `- same but for lines and character position<br>
+``[` `` and ``]` ``- same but for lines and character position<br>
 `:marks` - show the list of (book)marks<br>
 `:delmarks` - appending `!` delete all marks, adding ` c-f` delete a range of marks (c through f),<br>
 ` a f T` delete a specific list of marks (marks a, f and T in this case)<br>
@@ -121,8 +122,8 @@ it will jump to the file that have that mark set. Every file can have 'a' mark, 
 `f[character]` or `F[character]` - find the next or previous [character] in current line<br>
 `t[character]` or `T[character]` - same but it stops one character, so it search Till **[character]**<br>
 both of them can be combined with yank and delete commands<br>
-`d/[pattern]` - delete in line all character forward up until **[pattern]** , NOT including [pattern]<br>
-`d?[pattern]` - same but backward, it will erase all characters INCLUDING [pattern]<br>
+`d/[pattern]` - delete in line all character forward up until **[pattern]** , NOT including **[pattern]**<br>
+`d?[pattern]` - same but backward, it will erase all characters INCLUDING **[pattern]**<br>
 [back to index](#custom-vim-sheet)
 
 ### Visual mode:
@@ -154,7 +155,7 @@ Fix fuzzy search:<br>
 ### Tab
 
 `<<` or `>>` - outdent or indent a line.<br>
-`<` or `>`hcan be combined with [count]j or [count]k to indent/outdent current line and the [count]<br>
+`<` or `>`hcan be combined with `[count]j` or `[count]k` to indent/outdent current line and the `[count]`<br>
 lines below/above. Visual select could also be used to select lines and outdent/indent. All apply in NORMAL mode<br>
 In INSERT mode TAB key is used to indent/outdent (TIP - `:set list` show invisible characters like tab or CR)<br>
 in this mode pressing `ctrl-v` and typing u0009, will insert a 'TAB character'<br>
@@ -225,13 +226,13 @@ otherwise it'll open buffer 2 as a new window)<br>
 ### Window tabs
 
 `:tabedit` or `tabe [filename]` - open a new tab same way as split commands, with the file itself or `filename`<br>
-`:tabn [count]` or `:tabp [count]` - got to the [count] next/previous tab<br>
+`:tabn [count]` or `:tabp [count]` - got to the `[count]` next/previous tab<br>
 `[count]gt` or `[count]gT` do the same in NORMAL mode<br>
-`:tabnew` - open an empty new tab. The time is unnamed untile a file is saved.<br>
+`:tabnew` - open an empty new tab. The title is unnamed until a file is saved.<br>
 The tab have the same name of the split window I'm in<br>
-`:tabm [count]` - move the tab to the [count] position, 0 meaning the far left. If no [count] are typed, move the tab to the far right<br>
+`:tabm [count]` - move the tab to the `[count]` position, 0 meaning the far left. If no `[count]` are typed, move the tab to the far right<br>
 `:tabclose` or `:q` - close a single tab and put it in a buffer<br>
-`:tabclose [count]` - closes the [count] tab, far left is 1<br>
+`:tabclose [count]` - closes the `[count]` tab, far left is 1<br>
 `:tab ball` - opens all the buffers in separate tabs, limited to tabepagemax value<br>
 `:tab sb [count]` - open a new tab with the `[count]` buffer in it (see Buffer section sb or splitbuffer)<br>
 `:set tabpagemax [count]` - set the max number of tabs, or shows the setting if no `[count]` is typed<br>
