@@ -130,10 +130,10 @@ both of them can be combined with yank and delete commands<br>
 
 `v` - enter visual mode; `V` - enter in **visual line** mode<br>
 `ctrl-v` - enter in the **visual block** mode<br>
-This modes can select the text using the same commands to move the cursor (hjkl, w, e and so on)<br>
-or the find in line commands. `i` can be used as `in`, like `i(` select all text inside the parenthesis<br>
+This modes can select the text using the same commands to move the cursor (`hjkl`, `w`, `e` and so on)<br>
+or the find in line commands. `i` can be used as inside, like `i(` select all text inside the parenthesis<br>
 `y` and `p` - yank and paste the selected text. IPORTANT: when pasting something, the 'visual mode buffer'<br>
-will be overwritten but the new selected text, useful for switch a pattern, not for pasting more than once<br>
+will be overwritten with the new selected text, useful to switch a pattern, not for pasting more than once<br>
 `c` - delete the selected text and change to INSERT mode
 [back to index](#custom-vim-sheet)
 
