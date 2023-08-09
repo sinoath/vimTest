@@ -307,7 +307,7 @@ the vertical split will open to the left, unless specifing to open on the right 
 `:Vex` or `:Sex` - when a file is opened in vim, these commands split open vertically or horizontally a netrw window<br>
 These next three lines are for the fuzzy search in .vimrc:<br>
 `set nocompatible` - Limit search to your project<br>
-`set path+=\*\*` - Search all subdirectories and recursively<br>
+`set path+=**` - Search all subdirectories and recursively<br>
 `set wildmenu` - Shows multiple matches on one line<br>
 [back to index](#custom-vim-sheet)
 
