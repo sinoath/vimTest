@@ -98,7 +98,7 @@ to join more than 1 line at a time<br>
 `g;` - same, going backwards<br>
 `^o` - move to the previous jump<br>
 `^i` - move to the next jump<br>
-a [count] number before these commands executes them [count] number of time<br>
+a `[count]` number before these commands executes them `[count]` number of time<br>
 `gi` - place the cursor at the last insert position and enter INSERT mode<br>
 `:changes` - open the whole list of changes made inside the text<br>
 `:jumps` - open the jumps list. Vim considers jumps: the use of marks, search or replaces, open a different file.<br>
