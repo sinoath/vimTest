@@ -141,7 +141,7 @@ will be overwritten with the new selected text, useful to switch a pattern, not 
 
 `nmap` - map a key to execute a command in normal mode<br>
 `imap` - same, but in insert mode<br>
-`nnoremap` - set a **no recursive** mapping, meaning it can call itself, in NORMAL mode<br>
+`nnoremap` - set a **no recursive** mapping, meaning it can't call itself, in NORMAL mode<br>
 `inoremap` - same but for INSERT mode<br>
 `let mapleader = '[key]'` - set a key as **leader** so that pressing that key and a shortcut execute a command<br>
 (as an example setting `,` as leader, some action can be assigned to `,i` avoiding to enter in INSERT mode)<br>
@@ -155,7 +155,7 @@ Fix fuzzy search:<br>
 ### Tab
 
 `<<` or `>>` - outdent or indent a line.<br>
-`<` or `>`hcan be combined with `[count]j` or `[count]k` to indent/outdent current line and the `[count]`<br>
+`<` or `>`can be combined with `[count]j` or `[count]k` to indent/outdent current line and the `[count]`<br>
 lines below/above. Visual select could also be used to select lines and outdent/indent. All apply in NORMAL mode<br>
 In INSERT mode TAB key is used to indent/outdent (TIP - `:set list` show invisible characters like tab or CR)<br>
 in this mode pressing `ctrl-v` and typing u0009, will insert a 'TAB character'<br>
@@ -163,7 +163,7 @@ in this mode pressing `ctrl-v` and typing u0009, will insert a 'TAB character'<b
 Alternatively pressing `ctrl-v` and `ctrl-i` do the same thing<br>
 Invisible characters can be customized, unicode symbol for TAB is u2192 and unicode symbol for eol is u21b2<br>
 in .vimrc file using `set listchars=tab:` and typing `ctrl-v` followed by the unicode u2192 we can set TAB invisible<br>
-character. appending to the same line `\ ,eol:` and typing `ctrl-v` and than `u21b2` I can change eol character too<br>
+character. Appending to the same line `\ ,eol:` and typing `ctrl-v` and than `u21b2` we can change eol character too<br>
 `:set expandtab` - Convert a TAB in a number of spaces characters, apply to `<<` and `>>` too<br>
 `:set noexpandtab` - revert to the TAB character<br>
 `:set sw` or `:set swiftwidth` - show how many spaces the TAB character will be converted to, appen `=[count]` to set this number to count<br>
@@ -209,7 +209,7 @@ appending ` filename`, it will split open filename instead of a copy of the file
 otherwise it'll open buffer 2 as a new window)<br>
 `ctrl-w` - escape command for windows. Commands after the escape are:<br>
 - `w` switch window cycling through them<br>
-- `hjkl` move to the window vim-style, so 'h' left, 'j'down and so on<br>
+- `hjkl` move to the window vim-style, so `h` left, `j` down and so on<br>
 - `x` swap windows<br>
 - `r` or `R` rotate the split windows in one direction or the opposite<br>
 - `t` or `b` move to the (t)op left window or the (b)ottom right window<br>
@@ -278,7 +278,7 @@ Folds can be nested:<br>
 `zO` and `zC` - open/close the current fold and all inner/outer nested ones<br>
 `zA` - toggles between zC and zO<br>
 `zr` and `zm` - close/open all folds by one level<br>
-`zR` and `zR` - act like `zC` and `zO` but for all folds<br>
+`zR` and `zM` - act like `zC` and `zO` but for all folds<br>
 [back to index](#custom-vim-sheet)
 
 
