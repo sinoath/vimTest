@@ -41,7 +41,7 @@ A number `[count]` before the commands above set the absolute line number the cu
 `:set relativenumber` - show the line relative numbering<br>
 `:set number` - show the absolute line numbering (both can be used at the same time)<br>
 `p` - paste after the character or under the line the cursor is in<br>
-`P` - same, but before the caracter or the line above the cursor<br>
+`P` - same, but before the character or the line above the cursor<br>
 [back to index](#custom-vim-sheet)
 
 ### Words and i (for inner)
@@ -58,9 +58,9 @@ A number `[count]` before the commands above set the absolute line number the cu
 
 `/`	- start the search forward of a characters pattern<br>
 `?`	- start the search backward of a characters pattern<br>
-`*`	- search forward every occurency of the word under cursor<br>
+`*`	- search forward every occurrence of the word under cursor<br>
 `#`	- same, but backward<br>
-`%` - used on a parentheses, square bracket or curly brace to find the corrisponding one<br>
+`%` - used on a parentheses, square bracket or curly brace to find the corresponding one<br>
 `:set [no]hlsearch`	- set highlight on/off<br>
 `:set [no]incsearch` -  this enable the incremental highlight on search (on/off)<br>
 Once search is used, highlight stays on until it is manually turned off<br>
@@ -72,12 +72,12 @@ Once search is used, highlight stays on until it is manually turned off<br>
 ### Replace
 `:[n],[m]s/this/that` - search from line 'n' to line 'm' the word 'this' and substitute with 'that'<br>
 `:%s/this/that` - same, but search the entire document<br>
-`/g` - means globally, every occurrency, at the end of a search and replace command<br>
+`/g` - means globally, every occurrence, at the end of a search and replace command<br>
 adding `i` is case insensitive, adding `I` is case sensitive<br>
 adding `c` it will ask for a confirm<br>
 `\<word\>` - both in search and replace, it will find 'word' as a single word,<br>
 case insensitive and skipping **password** (i.e. `%s/\<word\>/warlords/gi` will substitute<br>
-**word** as a single word with **warlords** for the entire document, for every occurrency<br>
+**word** as a single word with **warlords** for the entire document, for every occurrence<br>
 [back to index](#custom-vim-sheet)
 
 ### Info line, Sort, Join, View, Read
@@ -94,7 +94,7 @@ to join more than 1 line at a time<br>
 
 ### Jump list, Change list:
 
-`g,` - Go forwart to the next edit (change) point of the text<br>
+`g,` - Go forward to the next edit (change) point of the text<br>
 `g;` - same, going backwards<br>
 `^o` - move to the previous jump<br>
 `^i` - move to the next jump<br>
@@ -132,7 +132,7 @@ both of them can be combined with yank and delete commands<br>
 `ctrl-v` - enter in the **visual block** mode<br>
 This modes can select the text using the same commands to move the cursor (`hjkl`, `w`, `e` and so on)<br>
 or the find in line commands. `i` can be used as inside, like `i(` select all text inside the parenthesis<br>
-`y` and `p` - yank and paste the selected text. IPORTANT: when pasting something, the 'visual mode buffer'<br>
+`y` and `p` - yank and paste the selected text. IMPORTANT: when pasting something, the 'visual mode buffer'<br>
 will be overwritten with the new selected text, useful to switch a pattern, not for pasting more than once<br>
 `c` - delete the selected text and change to INSERT mode
 [back to index](#custom-vim-sheet)
@@ -166,7 +166,7 @@ in .vimrc file using `set listchars=tab:` and typing `ctrl-v` followed by the un
 character. Appending to the same line `\ ,eol:` and typing `ctrl-v` and than `u21b2` we can change eol character too<br>
 `:set expandtab` - Convert a TAB in a number of spaces characters, apply to `<<` and `>>` too<br>
 `:set noexpandtab` - revert to the TAB character<br>
-`:set sw` or `:set swiftwidth` - show how many spaces the TAB character will be converted to, appen `=[count]` to set this number to count<br>
+`:set sw` or `:set swiftwidth` - show how many spaces the TAB character will be converted to, append `=[count]` to set this number to count<br>
 `:set ts` or `:set tabstop` - show how many 'spaces wide' are TAB characters, append `=[count]` to set as "count spaces wide"<br>
 `:set sts` of `:set softtabstop` - set the TAB stop in INSERT mode, if set to 0 it will follow the tabstop setting.<br>
 As the previous commands, append `=[count]` to set as 'count number of spaces wide'<br>
@@ -177,7 +177,7 @@ in INSERT mode TAB write spaces like before, but BACKSPACE cancel all the spaces
 Adding a space, BACKSPACE needs to be used 5 times (with the settings above) to delete the TAB<br>
 `:set ts sts sw` - show all three settings at once; in general they are set to the same number of spaces<br>
 `filetype indent on` - in .vimrc set custom indentation based on different file types.<br>
-`autocmd Filetype cpp setlocal noexpandtab ts=4 sts=4 sw=4` - in .vimrc set custom values everytime a cpp file is loaded in vim<br>
+`autocmd Filetype cpp setlocal noexpandtab ts=4 sts=4 sw=4` - in .vimrc set custom values every time a cpp file is loaded in vim<br>
 
 [back to index](#custom-vim-sheet)
 
@@ -215,7 +215,7 @@ otherwise it'll open buffer 2 as a new window)<br>
 - `t` or `b` move to the (t)op left window or the (b)ottom right window<br>
 - `p` move to the previous window<br>
 - `s` split window<br>
-- `=` make the windows eaqually sized<br>
+- `=` make the windows equally sized<br>
 - `-` or `|` maximizes height/width of the current window<br>
 - `o` shows (o)nly the current window, putting into buffers the other ones<br>
 - `T` close the split window and open it in a new Tab. See [Window tabs](#window-tabs)
@@ -294,7 +294,7 @@ moving the cursor up with the vim motions (`hjkl`) the top part of netrw shows h
 shortcuts, quick help and so on<br>
 to change a setting in this section press `ENTER` (for example to change the sort filter)<br>
 when navigating inside directories, we can select a file with `ENTER` to open it, but using `:q` will close<br>
-vim completelly.<br>
+vim completely.<br>
 with the cursor on a file we can split open it<br>
 - `o` - horizontally<br>
 - `v` - vertically<br>
@@ -303,7 +303,7 @@ with the cursor on a file we can split open it<br>
 preview is (by default) a horizontal split open window, but leave the cursor on netrw,<br>
 while `o` and `v` split open the window **and** move the cursor to it<br>
 `:let g:netrw_preview=1` - change the split preview from horizontal to vertical<br>
-the vertical split will open to the left, unless specifing to open on the right side with the command `:let g:netrw_altv=1`<br>
+the vertical split will open to the left, unless specified to open on the right side with the command `:let g:netrw_altv=1`<br>
 `:Vex` or `:Sex` - when a file is opened in vim, these commands split open vertically or horizontally a netrw window<br>
 These next three lines are for the fuzzy search in .vimrc:<br>
 `set nocompatible` - Limit search to your project<br>
@@ -319,8 +319,8 @@ These next three lines are for the fuzzy search in .vimrc:<br>
 `:vimgrep /regex/[option] target` - Search for the regular expression in the target file/directory,<br>
 with the g option it will count the occurencies<br>
 `:copen` of `:cope` or `:cw` - open the list of the regex occurencies<br>
-`:cnext` and `:cprev` - move to the next/previous regex occurency<br>
-`:cfirst` and `:clast` - move to the first/last occurency<br>
+`:cnext` and `:cprev` - move to the next/previous regex occurrence<br>
+`:cfirst` and `:clast` - move to the first/last occurrence<br>
 How to search in the entire project directory (it is set when vim opens):<br>
 `:pwd` - show the actual directory<br>
 `:vimgrep /regex/g **/*` - this target means to search in the entire project directory (fuzzy search fix NEEDED)<br>
@@ -336,9 +336,9 @@ Registers are memory locations vim uses to store yanked and deleted text, or mac
 Appending to a register call an action like yank, delete or change, the text will be stored in that register<br>
 `ctrl-r` - call a register in INSERT mode and write it<br>
 `:reg` - show registers list<br>
-`"[uppercase-letter]` - will **append** the text to the conent of the **letter** register<br>
+`"[uppercase-letter]` - will **append** the text to the content of the **letter** register<br>
 Special registers.<br>
-- `""` - default register, overwritten everytime some register is changed (including standard use of yank, delete and so on)<br>
+- `""` - default register, overwritten every time some register is changed (including standard use of yank, delete and so on)<br>
 - `"/` - contains latest string used for a search forward<br>
 - `"?` - contains latest string used for a search backward<br>
 - `"*` - store the 'under the cursor' search<br>
@@ -367,7 +367,7 @@ plugins too<br>
 	* `cs"'` - change the surrounding from `"` to `'`<br>
 	* `cst"` - change the surrounding html tag to `"`<br>
 	* `ys[movement]"` - add to the movement (or text object) the `"` surround<br>
-	* `ds"` - delete the surrond `"` based on the cursor position<br>
+	* `ds"` - delete the surround `"` based on the cursor position<br>
 	* `yss"` - surround with `"` the entire line<br>
 	* `.` - works with `ds`, `cs` and `ys`<br>
 - tpope/vim-commentary - adds/delete comments to text objects and movements based on the file extension<br>
